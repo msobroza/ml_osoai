@@ -192,11 +192,11 @@ def train(args):
         model.train_on_batch(x=batch_x, y=batch_y)
 
         iteration += 1
-        
-        # Save model
-        save_out_path = os.path.join(
-            models_dir, "md_{}_iters.h5".format(iteration))
-        model.save(save_out_path)
+        if iteration % call_freq == 0: 
+            # Save model
+            save_out_path = os.path.join(
+                models_dir, "md_{}_iters.h5".format(iteration))
+            model.save(save_out_path)
 
         # Stop training when maximum iteration achieves
         if iteration == 50001:
