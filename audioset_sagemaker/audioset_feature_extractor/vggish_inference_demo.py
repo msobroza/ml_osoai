@@ -44,14 +44,12 @@ Usage:
   $ python vggish_inference_demo.py
 """
 
-from __future__ import print_function
-
 import numpy as np
 from scipy.io import wavfile
 import six
 import tensorflow as tf
 
-import vggish_input
+from vggish_input import *
 import vggish_params
 import vggish_postprocess
 import vggish_slim

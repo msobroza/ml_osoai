@@ -20,7 +20,6 @@ import resampy
 
 import mel_features
 import vggish_params
-
 import soundfile as sf
 
 
