@@ -9,7 +9,6 @@ from __future__ import absolute_import
 import sys
 import h5py
 
-
 from keras.models import Model
 from keras.layers import Flatten, Dense, Input, Conv2D, MaxPooling2D, GlobalAveragePooling2D, GlobalMaxPooling2D
 from keras.engine.topology import get_source_inputs
@@ -17,10 +16,10 @@ from keras import backend as K
 
 import vggish_params as params
 
-
 # weight path
 WEIGHTS_PATH = './weights/vggish_audioset_weights_without_fc2.h5'
 WEIGHTS_PATH_TOP = './weights/vggish_audioset_weights.h5'
+
 
 def VGGish(load_weights=True, weights='audioset',
            input_tensor=None, input_shape=None,
@@ -57,8 +56,6 @@ def VGGish(load_weights=True, weights='audioset',
         else:
             aud_input = input_tensor
 
-
-
     # Block 1
     x = Conv2D(64, (3, 3), strides=(1, 1), activation='relu', padding='same', name='conv1')(aud_input)
     x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='pool1')(x)
@@ -77,8 +74,6 @@ def VGGish(load_weights=True, weights='audioset',
     x = Conv2D(512, (3, 3), strides=(1, 1), activation='relu', padding='same', name='conv4/conv4_2')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), padding='same', name='pool4')(x)
 
-
-
     if include_top:
         # FC block
         x = Flatten(name='flatten_')(x)
@@ -91,14 +86,12 @@ def VGGish(load_weights=True, weights='audioset',
         elif pooling == 'max':
             x = GlobalMaxPooling2D()(x)
 
-
     if input_tensor is not None:
         inputs = get_source_inputs(input_tensor)
     else:
         inputs = aud_input
     # Create model.
     model = Model(inputs, x, name='VGGish')
-
 
     # load weights
     if load_weights:
