@@ -49,12 +49,12 @@ from scipy.io import wavfile
 import six
 import tensorflow as tf
 
-from vggish_input import *
+import vggish_input
 import vggish_params
 import vggish_postprocess
 import vggish_slim
 import datetime
-
+import numpy as np
 from vggish_keras import VGGish
 
 import argparse
@@ -85,7 +85,7 @@ def model_fn(features, labels, mode, params):
         raise NotImplementedError()
 
 
-def main(_):
+def main():
     # In this simple example, we run the examples from a single audio file through
     # the model. If none is provided, we generate a synthetic input.
     if FLAGS.wav_file:
@@ -116,7 +116,7 @@ def main(_):
 
     sound_model = VGGish(include_top=True, load_weights=True)
     a = datetime.datetime.now()
-    embedding_sound = sound_model.predict(examples_batch)
+    embedding_sound = sound_model.predict(np.expand_dims(examples_batch, axis=-1))
     # Time computation
     b = datetime.datetime.now()
     c = b - a
@@ -142,7 +142,10 @@ def main(_):
         print('Time tf preprocessing: {}'.format(int(c.microseconds * 0.001)))
         # print(embedding_batch)
         postprocessed_batch = pproc.postprocess(embedding_batch)
-        # print(postprocessed_batch)
+        postprocessed_batch_keras = pproc.postprocess(embedding_sound)
+        print(postprocessed_batch.shape)
+        print(postprocessed_batch_keras.shape)
+        print(postprocessed_batch-postprocessed_batch_keras)
         # Write the postprocessed embeddings as a SequenceExample, in a similar
         # format as the features released in AudioSet. Each row of the batch of
         # embeddings corresponds to roughly a second of audio (96 10ms frames), and
@@ -163,7 +166,6 @@ def main(_):
                 }
             )
         )
-        # print(seq_example)
         if writer:
             writer.write(seq_example.SerializeToString())
 
