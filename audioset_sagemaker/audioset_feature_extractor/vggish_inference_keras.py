@@ -142,7 +142,10 @@ def main():
         print('Time tf preprocessing: {}'.format(int(c.microseconds * 0.001)))
         # print(embedding_batch)
         postprocessed_batch = pproc.postprocess(embedding_batch)
-        postprocessed_batch_keras = pproc.postprocess(embedding_sound)
+        if embedding_sound.shape == 2:
+            postprocessed_batch_keras = pproc.postprocess_single_sample(embedding_sound)
+        else:
+            postprocessed_batch_keras = pproc.postprocess(embedding_sound)
         print(postprocessed_batch.shape)
         print(postprocessed_batch_keras.shape)
         print(postprocessed_batch-postprocessed_batch_keras)

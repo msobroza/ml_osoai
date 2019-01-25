@@ -89,11 +89,12 @@ class Postprocessor(object):
 
         return quantized_embeddings
 
-    def window_stack(a, width=10, stepsize=1):
+    def window_stack(a, width=10, step_size=1):
         n = a.shape[0]
-        return np.hstack(a[i:1 + n + i - width:stepsize] for i in range(0, n-width))
+        indexes_x = np.dstack(a[i:i + width + step_size - 1, :] for i in range(0, n - width + step_size))
+        return indexes_x
 
-    def postprocess_single_sound(self, embeddings_batch, max_dims):
+    def postprocess_single_sample(self, embeddings_batch, max_dims):
         """Applies postprocessing to a single sample of embeddings.
 
     Args:
@@ -105,6 +106,11 @@ class Postprocessor(object):
       containing the PCA-transformed and quantized version of the input.
     """
         quantized_embeddings = self.postprocess(self, embeddings_batch)
-        if len(embeddings_batch.shape) == 2:
-
+        if len(quantized_embeddings.shape) == 2:
+            if quantized_embeddings.shape[0] < max_dims:
+                quantized_embeddings = np.pad(quantized_embeddings, pad_width=((0,max_dims-quantized_embeddings.shape[0]),(0,0)),mode='mean')
+            if quantized_embeddings.shape[0] == max_dims:
+                quantized_embeddings = np.expand_dims(quantized_embeddings, axis=-1)
+            else:
+                quantized_embeddings = self.window_stack(quantized_embeddings, width=10, step_size=1)
         return quantized_embeddings
