@@ -88,3 +88,23 @@ class Postprocessor(object):
         quantized_embeddings = quantized_embeddings.astype(np.uint8)
 
         return quantized_embeddings
+
+    def window_stack(a, width=10, stepsize=1):
+        n = a.shape[0]
+        return np.hstack(a[i:1 + n + i - width:stepsize] for i in range(0, n-width))
+
+    def postprocess_single_sound(self, embeddings_batch, max_dims):
+        """Applies postprocessing to a single sample of embeddings.
+
+    Args:
+      embeddings_batch: An nparray of shape [batch_size, embedding_size]
+        containing output from the embedding layer of VGGish.
+
+    Returns:
+      An nparray of the same shape as the input but of type uint8,
+      containing the PCA-transformed and quantized version of the input.
+    """
+        quantized_embeddings = self.postprocess(self, embeddings_batch)
+        if len(embeddings_batch.shape) == 2:
+
+        return quantized_embeddings
