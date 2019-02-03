@@ -9,6 +9,7 @@ from __future__ import absolute_import
 import sys
 import h5py
 
+#from tensorflow.python.keras._impl.keras.models import Model
 from keras.models import Model
 from keras.layers import Flatten, Dense, Input, Conv2D, MaxPooling2D, GlobalAveragePooling2D, GlobalMaxPooling2D
 from keras.engine.topology import get_source_inputs
@@ -92,7 +93,6 @@ def VGGish(load_weights=True, weights='audioset',
         inputs = aud_input
     # Create model.
     model = Model(inputs, x, name='VGGish')
-
     # load weights
     if load_weights:
         if weights == 'audioset':
@@ -102,5 +102,5 @@ def VGGish(load_weights=True, weights='audioset',
                 model.load_weights(WEIGHTS_PATH)
         else:
             print("failed to load weights")
-
+    
     return model

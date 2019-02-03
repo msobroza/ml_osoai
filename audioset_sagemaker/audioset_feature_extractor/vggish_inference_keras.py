@@ -59,6 +59,8 @@ from vggish_keras import VGGish
 import classifier_model
 import argparse
 import csv
+import sys
+
 parser = argparse.ArgumentParser(description='Compares the inference in keras and in tf.')
 parser.add_argument("--wav_file", default=None,
                     help='Path to a wav file. Should contain signed 16-bit PCM samples'
@@ -129,7 +131,14 @@ def main():
         FLAGS.tfrecord_file) if FLAGS.tfrecord_file else None
 
     sound_model = VGGish(include_top=True, load_weights=True)
+    sound_model_tf = tf.keras.models.Model(sound_model)
+    sound_model_tf.compile(optimizer='adam', loss='mse')
+    estimator_sound_model = tf.keras.estimator.model_to_estimator(keras_model=sound_model_tf)
+    embedding_sound = estimator_sound_model.predict(input_fn=np.expand_dims(examples_batch, axis=-1), as_iterable=False)
+    print(embedding_sound)
+    sys.exit(0)
     c_model = classifier_model.get_classifier_model()
+    estimator_class_model = tf.keras.estimator.model_to_estimator(keras_model=c_model)
     a = datetime.datetime.now()
     embedding_sound = sound_model.predict(np.expand_dims(examples_batch, axis=-1))
     # Time computation
