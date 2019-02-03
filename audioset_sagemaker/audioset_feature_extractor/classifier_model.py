@@ -3,6 +3,7 @@ from keras.models import Model
 from keras.layers import (Input, Dense, BatchNormalization, Dropout, Lambda,
                           Activation, Concatenate)
 import keras.backend as K
+from keras.models import load_model
 
 
 def average_pooling(inputs, **kwargs):
@@ -35,7 +36,7 @@ def pooling_shape(input_shape):
 
     return sample_num, freq_bins
 
-def get_classifier_model(model_type):
+def get_classifier_model(model_type='decision_level_multi_attention'):
 
 
     time_steps = 10
@@ -96,7 +97,8 @@ def get_classifier_model(model_type):
         cla = Dense(classes_num, activation='sigmoid')(a3)
         att = Dense(classes_num, activation='softmax')(a3)
         output_layer = Lambda(
-            attention_pooling, output_shape=pooling_shape)([cla, att])elif model_type == 'decision_level_multi_attention':
+            attention_pooling, output_shape=pooling_shape)([cla, att])
+    elif model_type == 'decision_level_multi_attention':
         '''Decision level multi attention pooling.
 
         [4] Yu, Changsong, et al. "Multi-level Attention Model for Weakly
@@ -138,4 +140,5 @@ def get_classifier_model(model_type):
         # Build model
     model = Model(inputs=input_layer, outputs=output_layer)
     model.summary()
+    model = load_model('weights/md_50000_iters.h5')
     return model

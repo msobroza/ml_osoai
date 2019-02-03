@@ -48,7 +48,7 @@ import numpy as np
 from scipy.io import wavfile
 import six
 import tensorflow as tf
-
+import csv
 import vggish_input
 import vggish_params
 import vggish_postprocess
@@ -56,8 +56,9 @@ import vggish_slim
 import datetime
 import numpy as np
 from vggish_keras import VGGish
-
+import classifier_model
 import argparse
+import csv
 parser = argparse.ArgumentParser(description='Compares the inference in keras and in tf.')
 parser.add_argument("--wav_file", default=None,
                     help='Path to a wav file. Should contain signed 16-bit PCM samples'
@@ -84,8 +85,21 @@ def model_fn(features, labels, mode, params):
     else:
         raise NotImplementedError()
 
+def get_dict_sounds():
+    index_sound = dict()
+    with open('class_labels_indices.csv', 'r') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        c = 0
+        for row in spamreader:
+            c += 1
+            if c==1:
+                continue
+            index_sound[int(row[0])] = str(row[2])        
+    return index_sound
 
 def main():
+    index_sound = get_dict_sounds()
+    num_secs = 10
     # In this simple example, we run the examples from a single audio file through
     # the model. If none is provided, we generate a synthetic input.
     if FLAGS.wav_file:
@@ -115,66 +129,24 @@ def main():
         FLAGS.tfrecord_file) if FLAGS.tfrecord_file else None
 
     sound_model = VGGish(include_top=True, load_weights=True)
+    c_model = classifier_model.get_classifier_model()
     a = datetime.datetime.now()
     embedding_sound = sound_model.predict(np.expand_dims(examples_batch, axis=-1))
     # Time computation
     b = datetime.datetime.now()
     c = b - a
     print('Time keras preprocessing: {}'.format(int(c.microseconds * 0.001)))
-
-    with tf.Graph().as_default(), tf.Session() as sess:
-        # Define the model in inference mode, load the checkpoint, and
-        # locate input and output tensors.
-        vggish_slim.define_vggish_slim(training=False)
-        vggish_slim.load_vggish_slim_checkpoint(sess, FLAGS.checkpoint)
-        features_tensor = sess.graph.get_tensor_by_name(
-            vggish_params.INPUT_TENSOR_NAME)
-        embedding_tensor = sess.graph.get_tensor_by_name(
-            vggish_params.OUTPUT_TENSOR_NAME)
-
-        a = datetime.datetime.now()
-        # Run inference and postprocessing.
-        [embedding_batch] = sess.run([embedding_tensor],
-                                     feed_dict={features_tensor: examples_batch})
-        # Time computation
-        b = datetime.datetime.now()
-        c = b - a
-        print('Time tf preprocessing: {}'.format(int(c.microseconds * 0.001)))
-        # print(embedding_batch)
-        postprocessed_batch = pproc.postprocess(embedding_batch)
-        if embedding_sound.shape == 2:
-            postprocessed_batch_keras = pproc.postprocess_single_sample(embedding_sound)
-        else:
-            postprocessed_batch_keras = pproc.postprocess(embedding_sound)
-        print(postprocessed_batch.shape)
-        print(postprocessed_batch_keras.shape)
-        print(postprocessed_batch-postprocessed_batch_keras)
-        # Write the postprocessed embeddings as a SequenceExample, in a similar
-        # format as the features released in AudioSet. Each row of the batch of
-        # embeddings corresponds to roughly a second of audio (96 10ms frames), and
-        # the rows are written as a sequence of bytes-valued features, where each
-        # feature value contains the 128 bytes of the whitened quantized embedding.
-        seq_example = tf.train.SequenceExample(
-            feature_lists=tf.train.FeatureLists(
-                feature_list={
-                    vggish_params.AUDIO_EMBEDDING_FEATURE_NAME:
-                        tf.train.FeatureList(
-                            feature=[
-                                tf.train.Feature(
-                                    bytes_list=tf.train.BytesList(
-                                        value=[embedding.tobytes()]))
-                                for embedding in postprocessed_batch
-                            ]
-                        )
-                }
-            )
-        )
-        if writer:
-            writer.write(seq_example.SerializeToString())
-
-    if writer:
-        writer.close()
-
-
+    if len(embedding_sound.shape) == 2:
+        postprocessed_batch_keras = pproc.postprocess_single_sample(embedding_sound, num_secs)
+    else:
+        postprocessed_batch_keras = pproc.postprocess(embedding_sound)
+    print(postprocessed_batch_keras.shape)
+    print(np.swapaxes(postprocessed_batch_keras, 0, 2).shape)
+    output = c_model.predict(np.swapaxes(np.swapaxes(postprocessed_batch_keras, 0, 2),1, 2))
+    if len(output.shape) == 2:
+        output = np.mean(output,axis=0)
+    indexes_max = output.argsort()[-5:][::-1]
+    for i in indexes_max:
+         print(index_sound[i])
 if __name__ == '__main__':
     main()

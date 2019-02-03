@@ -89,7 +89,7 @@ class Postprocessor(object):
 
         return quantized_embeddings
 
-    def window_stack(a, width=10, step_size=1):
+    def window_stack(self, a, width=10, step_size=1):
         n = a.shape[0]
         indexes_x = np.dstack(a[i:i + width + step_size - 1, :] for i in range(0, n - width + step_size))
         return indexes_x
@@ -105,7 +105,7 @@ class Postprocessor(object):
       An nparray of the same shape as the input but of type uint8,
       containing the PCA-transformed and quantized version of the input.
     """
-        quantized_embeddings = self.postprocess(self, embeddings_batch)
+        quantized_embeddings = self.postprocess(embeddings_batch)
         if len(quantized_embeddings.shape) == 2:
             if quantized_embeddings.shape[0] < max_dims:
                 quantized_embeddings = np.pad(quantized_embeddings, pad_width=((0,max_dims-quantized_embeddings.shape[0]),(0,0)),mode='mean')
