@@ -60,6 +60,7 @@ import classifier_model
 import argparse
 import csv
 import sys
+import inspect
 
 parser = argparse.ArgumentParser(description='Compares the inference in keras and in tf.')
 parser.add_argument("--wav_file", default=None,
@@ -76,17 +77,6 @@ parser.add_argument("--tfrecord_file", default=None,
 FLAGS = parser.parse_args()
 
 
-def model_fn(features, labels, mode, params):
-    if isinstance(features, dict):  # For serving
-        features = features['feature']
-
-    predictions = tf.layers.dense(features, 1)
-
-    if mode == tf.estimator.ModeKeys.PREDICT:
-        return tf.estimator.EstimatorSpec(mode, predictions=predictions)
-    else:
-        raise NotImplementedError()
-
 def get_dict_sounds():
     index_sound = dict()
     with open('class_labels_indices.csv', 'r') as csvfile:
@@ -98,6 +88,18 @@ def get_dict_sounds():
                 continue
             index_sound[int(row[0])] = str(row[2])        
     return index_sound
+
+  
+def input_function(features,labels=None,shuffle=False):
+    input_fn = tf.estimator.inputs.numpy_input_fn(
+        x={"input_1": features},
+        y=labels,
+        shuffle=shuffle
+    )
+    return input_fn
+
+def uint8_to_float32(x):
+    return (np.float32(x) - 128.) / 128
 
 def main():
     index_sound = get_dict_sounds()
@@ -129,33 +131,36 @@ def main():
     # If needed, prepare a record writer to store the postprocessed embeddings.
     writer = tf.python_io.TFRecordWriter(
         FLAGS.tfrecord_file) if FLAGS.tfrecord_file else None
-
     sound_model = VGGish(include_top=True, load_weights=True)
-    sound_model_tf = tf.keras.models.Model(sound_model)
-    sound_model_tf.compile(optimizer='adam', loss='mse')
-    estimator_sound_model = tf.keras.estimator.model_to_estimator(keras_model=sound_model_tf)
-    embedding_sound = estimator_sound_model.predict(input_fn=np.expand_dims(examples_batch, axis=-1), as_iterable=False)
-    print(embedding_sound)
-    sys.exit(0)
-    c_model = classifier_model.get_classifier_model()
-    estimator_class_model = tf.keras.estimator.model_to_estimator(keras_model=c_model)
-    a = datetime.datetime.now()
+    sound_model.compile(optimizer='adam', loss='mse')
+    # serialize model to JSON
+    model_json = sound_model.to_json()
+    with open("./models/sound_model.json", "w") as json_file:
+        json_file.write(model_json)
+    # serialize weights to HDF5
+    print("Saved model to disk")
+    class_model = classifier_model.get_classifier_model()
+    class_model.compile(loss='binary_crossentropy', optimizer='adam')
+    model_json = class_model.to_json()
+    with open("./models/sound_class.json", "w") as json_file:
+        json_file.write(model_json)
+    # serialize weights to HDF5
+    class_model.save_weights("./models/sound_class.h5")
+    print("Saved model to disk")
+    #sys.exit(0)
     embedding_sound = sound_model.predict(np.expand_dims(examples_batch, axis=-1))
-    # Time computation
-    b = datetime.datetime.now()
-    c = b - a
-    print('Time keras preprocessing: {}'.format(int(c.microseconds * 0.001)))
     if len(embedding_sound.shape) == 2:
         postprocessed_batch_keras = pproc.postprocess_single_sample(embedding_sound, num_secs)
     else:
         postprocessed_batch_keras = pproc.postprocess(embedding_sound)
-    print(postprocessed_batch_keras.shape)
-    print(np.swapaxes(postprocessed_batch_keras, 0, 2).shape)
-    output = c_model.predict(np.swapaxes(np.swapaxes(postprocessed_batch_keras, 0, 2),1, 2))
+    postprocessed_batch_keras = uint8_to_float32(postprocessed_batch_keras)
+    #print(np.swapaxes(postprocessed_batch_keras, 0, 2).shape)
+    output = class_model.predict(np.swapaxes(np.swapaxes(postprocessed_batch_keras, 0, 2),1, 2))
     if len(output.shape) == 2:
         output = np.mean(output,axis=0)
     indexes_max = output.argsort()[-5:][::-1]
     for i in indexes_max:
          print(index_sound[i])
+         print(output[i])
 if __name__ == '__main__':
     main()

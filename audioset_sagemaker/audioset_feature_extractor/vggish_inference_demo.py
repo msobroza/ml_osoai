@@ -49,7 +49,7 @@ from scipy.io import wavfile
 import six
 import tensorflow as tf
 
-from vggish_input import *
+import vggish_input
 import vggish_params
 import vggish_postprocess
 import vggish_slim
@@ -158,7 +158,7 @@ def main(_):
             }
         )
     )
-    #print(seq_example)
+    print(embedding_batch)
     if writer:
       writer.write(seq_example.SerializeToString())
 
