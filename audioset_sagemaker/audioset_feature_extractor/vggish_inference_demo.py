@@ -87,6 +87,8 @@ def model_fn(features, labels, mode, params):
     else:
         raise NotImplementedError()
 
+def uint8_to_float32(x):
+    return (np.float32(x) - 128.) / 128
 
 def main(_):
   # In this simple example, we run the examples from a single audio file through
