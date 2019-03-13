@@ -13,10 +13,10 @@ import core
 import keras
 from keras.models import Model
 from keras.layers import (Input, Dense, BatchNormalization, Dropout, Lambda,
-                          Activation, Concatenate, Reshape)
+                          Activation, Concatenate, Reshape, TimeDistributed, Flatten)
 import keras.backend as K
 from keras.optimizers import Adam
-from autopool import AutoPool
+from autopool import AutoPool1D
 
 try:
     import cPickle
@@ -157,15 +157,26 @@ def train(args):
 
         output_layer = Dense(classes_num, activation='sigmoid')(b1)
 
-    elif model_type == 'adaptative_pooling':
+    elif model_type == 'adaptative_pooling_multilevel_attention':
         '''
         Adaptive pooling operators for weakly labeled sound event detection
         https://github.com/marl/autopool
         '''
-        b1 = Dense(classes_num, activation='sigmoid')(a3)
-        b1 = Reshape((time_steps, classes_num, 1))(b1)
-        b1 = TimeDistributed(AutoPool(axis=1, kernel_constraint=keras.constraints.non_neg()))(b1)        
-        output_layer = Reshape((classes_num))(b1)
+        cla1 = Dense(classes_num, activation='sigmoid')(a2)
+        att1 = Dense(classes_num, activation='softmax')(a2)
+        out1 = Lambda(
+            attention_pooling, output_shape=pooling_shape)([cla1, att1])
+
+        cla2 = Dense(classes_num, activation='sigmoid')(a3)
+        att2 = Dense(classes_num, activation='softmax')(a3)
+        out2 = Lambda(
+            attention_pooling, output_shape=pooling_shape)([cla2, att2])
+
+        b1 = Concatenate(axis=-1)([out1, out2])
+        b1 = Dense(classes_num, activation='sigmoid')(b1)
+        b1 = Reshape((classes_num, time_steps, 1))(b1)
+        b1 = TimeDistributed(AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg()))(b1)        
+        output_layer = Flatten()(b1)
     else:
         raise Exception("Incorrect model_type!")
 
@@ -201,7 +212,7 @@ if __name__ == '__main__':
                                  'decision_level_average_pooling', 
                                  'decision_level_single_attention',
                                  'decision_level_multi_attention',
-                                 'feature_level_attention'])
+                                 'feature_level_attention','adaptative_pooling_multilevel_attention'])
 
     parser.add_argument('--learning_rate', type=float, default=1e-3)
 
