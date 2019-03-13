@@ -13,9 +13,10 @@ import core
 import keras
 from keras.models import Model
 from keras.layers import (Input, Dense, BatchNormalization, Dropout, Lambda,
-                          Activation, Concatenate)
+                          Activation, Concatenate, Reshape)
 import keras.backend as K
 from keras.optimizers import Adam
+from autopool import AutoPool
 
 try:
     import cPickle
@@ -156,6 +157,15 @@ def train(args):
 
         output_layer = Dense(classes_num, activation='sigmoid')(b1)
 
+    elif model_type == 'adaptative_pooling':
+        '''
+        Adaptive pooling operators for weakly labeled sound event detection
+        https://github.com/marl/autopool
+        '''
+        b1 = Dense(classes_num, activation='sigmoid')(a3)
+        b1 = Reshape((time_steps, classes_num, 1))(b1)
+        b1 = TimeDistributed(AutoPool(axis=1, kernel_constraint=keras.constraints.non_neg()))(b1)        
+        output_layer = Reshape((classes_num))(b1)
     else:
         raise Exception("Incorrect model_type!")
 
