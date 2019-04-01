@@ -1,4 +1,4 @@
-iport numpy as np
+import numpy as np
 import os
 import gzip
 import h5py

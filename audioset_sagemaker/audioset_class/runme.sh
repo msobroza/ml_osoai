@@ -8,7 +8,7 @@ WORKSPACE="./pub_keras_audioset_classification"
 
 BACKEND="keras"     # 'pytorch' | 'keras'
 
-MODEL_TYPE="decision_level_multi_attention"    # 'decision_level_max_pooling'
+MODEL_TYPE="adaptative_pooling"    # 'decision_level_max_pooling'
                                                 # | 'decision_level_average_pooling'
                                                 # | 'decision_level_single_attention'
                                                 # | 'decision_level_multi_attention'

@@ -9,11 +9,11 @@ import logging
 from sklearn import metrics
 from utils import utilities, data_generator
 import core
-
+from keras_self_attention import SeqSelfAttention
 import keras
 from keras.models import Model
-from keras.layers import (Input, Dense, BatchNormalization, Dropout, Lambda,
-                          Activation, Concatenate, Reshape, TimeDistributed, Flatten)
+from keras.layers import (Input, Dense, Concatenate, BatchNormalization, Dropout, Lambda,
+                          Activation, Concatenate, Reshape, TimeDistributed, Flatten, LSTM, Bidirectional)
 import keras.backend as K
 from keras.optimizers import Adam
 from autopool import AutoPool1D
@@ -64,6 +64,7 @@ def train(args):
     classes_num = 527
 
     # Hyper parameters
+    hidden_units_rnn = 256
     hidden_units = 1024
     drop_rate = 0.5
     batch_size = 500
@@ -157,31 +158,25 @@ def train(args):
 
         output_layer = Dense(classes_num, activation='sigmoid')(b1)
 
-    elif model_type == 'adaptative_pooling_multilevel_attention':
+    elif model_type == 'adaptative_pooling':
         '''
         Adaptive pooling operators for weakly labeled sound event detection
         https://github.com/marl/autopool
         '''
-        cla1 = Dense(classes_num, activation='sigmoid')(a2)
-        att1 = Dense(classes_num, activation='softmax')(a2)
-        out1 = Lambda(
-            attention_pooling, output_shape=pooling_shape)([cla1, att1])
-
-        cla2 = Dense(classes_num, activation='sigmoid')(a3)
-        att2 = Dense(classes_num, activation='softmax')(a3)
-        out2 = Lambda(
-            attention_pooling, output_shape=pooling_shape)([cla2, att2])
-
-        b1 = Concatenate(axis=-1)([out1, out2])
-        b1 = Dense(classes_num, activation='sigmoid')(b1)
-        b1 = Reshape((classes_num, time_steps, 1))(b1)
-        b1 = TimeDistributed(AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg()))(b1)        
-        output_layer = Flatten()(b1)
+	
+        rnn1 = Bidirectional(LSTM(units=hidden_units_rnn, return_sequences=True))(a3)
+        p_dynamic = [TimeDistributed(Dense(1, activation='sigmoid'))(rnn1) for i in range(classes_num)]
+        p_static_array = [AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg())(p) for p in p_dynamic]        
+        output = Concatenate()(p_static_array) 
+        output_layer = Flatten()(output)
     else:
         raise Exception("Incorrect model_type!")
 
     # Build model
-    model = Model(inputs=input_layer, outputs=output_layer)
+    if model_type == 'adaptative_pooling':    
+        model = Model(inputs=input_layer, outputs=output_layer)
+    else:
+        model = Model(inputs=input_layer, outputs=output_layer)
     model.summary()
 
     args.model = model
@@ -189,7 +184,12 @@ def train(args):
 
     # Train
     core.train(args)
-
+    if model_type == 'adaptative_pooling':
+        model_json = model.to_json()
+        with open("./models/sound_class_adap.json", "w") as json_file:
+            json_file.write(model_json)
+        # serialize weights to HDF5
+        model.save_weights("./models/sound_class_adap.h5")
 
 # Main
 if __name__ == '__main__':
@@ -212,7 +212,7 @@ if __name__ == '__main__':
                                  'decision_level_average_pooling', 
                                  'decision_level_single_attention',
                                  'decision_level_multi_attention',
-                                 'feature_level_attention','adaptative_pooling_multilevel_attention'])
+                                 'feature_level_attention','adaptative_pooling'])
 
     parser.add_argument('--learning_rate', type=float, default=1e-3)
 
