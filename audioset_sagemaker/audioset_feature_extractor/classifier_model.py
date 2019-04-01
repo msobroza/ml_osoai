@@ -52,10 +52,12 @@ def get_classifier_model(model_type='adaptative_pooling', model_path='weights/md
     hidden_units = 1024
     drop_rate = 0.5
     batch_size = 500
-
+    
     # Embedded layers
-    input_layer = Input(shape=(time_steps, freq_bins))
-
+    if model_type=='adaptative_pooling':
+        input_layer = Input(shape=(None, freq_bins))
+    else:
+        input_layer = Input(shape=(time_steps, freq_bins))
     a1 = Dense(hidden_units)(input_layer)
     a1 = BatchNormalization()(a1)
     a1 = Activation('relu')(a1)
@@ -148,11 +150,12 @@ def get_classifier_model(model_type='adaptative_pooling', model_path='weights/md
         p_dynamic = [TimeDistributed(Dense(1, activation='sigmoid'))(rnn1) for i in range(classes_num)]
         p_static_array = [AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg())(p) for p in p_dynamic]
         output = Concatenate()(p_static_array)
+        p_dynamic_layer = Concatenate()(p_dynamic)
     else:
         raise Exception("Incorrect model_type!")
 
         # Build model
-    model = Model(inputs=input_layer, outputs=output)
+    model = Model(inputs=input_layer, outputs=[output, p_dynamic_layer])
     model.summary()
     model.load_weights(model_path, by_name=True)
     return model
