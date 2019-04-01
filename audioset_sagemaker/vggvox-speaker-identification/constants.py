@@ -1,4 +1,4 @@
-from pyaudio import paInt16
+#from pyaudio import paInt16
 
 # Signal processing
 SAMPLE_RATE = 16000
