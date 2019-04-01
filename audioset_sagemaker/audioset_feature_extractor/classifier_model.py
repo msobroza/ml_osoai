@@ -40,7 +40,7 @@ def pooling_shape(input_shape):
 
     return sample_num, freq_bins
 
-def get_classifier_model(model_type='adaptative_pooling'):
+def get_classifier_model(model_type='adaptative_pooling',model_path='weights/md_50000_adap_iters.h5'):
 
 
     time_steps = 10
@@ -154,5 +154,5 @@ def get_classifier_model(model_type='adaptative_pooling'):
         # Build model
     model = Model(inputs=input_layer, outputs=output)
     model.summary()
-    model.load_weights('weights/md_50000_adap_iters.h5', by_name=True)
+    model.load_weights(model_path, by_name=True)
     return model

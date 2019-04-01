@@ -139,7 +139,7 @@ def main():
     #    json_file.write(model_json)
     # serialize weights to HDF5
     print("Saved model to disk")
-    class_model = classifier_model.get_classifier_model()
+    class_model = classifier_model.get_classifier_model(model_type='adaptative_pooling', model_path='')
     class_model.compile(loss='binary_crossentropy', optimizer='adam')
     model_json = class_model.to_json()
     with open("./models/sound_class_adap.json", "w") as json_file:
