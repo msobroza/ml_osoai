@@ -129,23 +129,23 @@ def main():
     pproc = vggish_postprocess.Postprocessor(FLAGS.pca_params)
 
     # If needed, prepare a record writer to store the postprocessed embeddings.
-    writer = tf.python_io.TFRecordWriter(
-        FLAGS.tfrecord_file) if FLAGS.tfrecord_file else None
-    sound_model = VGGish(include_top=True, load_weights=True)
-    sound_model.compile(optimizer='adam', loss='mse')
+    #writer = tf.python_io.TFRecordWriter(
+    #    FLAGS.tfrecord_file) if FLAGS.tfrecord_file else None
+    #sound_model = VGGish(include_top=True, load_weights=True)
+    #sound_model.compile(optimizer='adam', loss='mse')
     # serialize model to JSON
-    model_json = sound_model.to_json()
-    with open("./models/sound_model.json", "w") as json_file:
-        json_file.write(model_json)
+    #model_json = sound_model.to_json()
+    #with open("./models/sound_model.json", "w") as json_file:
+    #    json_file.write(model_json)
     # serialize weights to HDF5
     print("Saved model to disk")
     class_model = classifier_model.get_classifier_model()
     class_model.compile(loss='binary_crossentropy', optimizer='adam')
     model_json = class_model.to_json()
-    with open("./models/sound_class.json", "w") as json_file:
+    with open("./models/sound_class_adap.json", "w") as json_file:
         json_file.write(model_json)
     # serialize weights to HDF5
-    class_model.save_weights("./models/sound_class.h5")
+    class_model.save_weights("./models/sound_class_adap.h5")
     print("Saved model to disk")
     #sys.exit(0)
     embedding_sound = sound_model.predict(np.expand_dims(examples_batch, axis=-1))

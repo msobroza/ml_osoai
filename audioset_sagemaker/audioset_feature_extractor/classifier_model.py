@@ -1,10 +1,14 @@
+import numpy as np
+import h5py
 import keras
+from keras_self_attention import SeqSelfAttention
 from keras.models import Model
-from keras.layers import (Input, Dense, BatchNormalization, Dropout, Lambda,
-                          Activation, Concatenate)
+from keras.layers import (Input, Dense, Concatenate, BatchNormalization, Dropout, Lambda,
+                          Activation, Concatenate, Reshape, TimeDistributed, Flatten, LSTM, Bidirectional)
 import keras.backend as K
 from keras.models import load_model
-
+from keras.optimizers import Adam
+from autopool import AutoPool1D
 
 def average_pooling(inputs, **kwargs):
     input = inputs[0]   # (batch_size, time_steps, freq_bins)
@@ -36,7 +40,7 @@ def pooling_shape(input_shape):
 
     return sample_num, freq_bins
 
-def get_classifier_model(model_type='decision_level_multi_attention'):
+def get_classifier_model(model_type='adaptative_pooling'):
 
 
     time_steps = 10
@@ -44,6 +48,7 @@ def get_classifier_model(model_type='decision_level_multi_attention'):
     classes_num = 527
 
     # Hyper parameters
+    hidden_units_rnn = 256
     hidden_units = 1024
     drop_rate = 0.5
     batch_size = 500
@@ -133,12 +138,21 @@ def get_classifier_model(model_type='decision_level_multi_attention'):
         b1 = Dropout(drop_rate)(b1)
 
         output_layer = Dense(classes_num, activation='sigmoid')(b1)
+    elif model_type == 'adaptative_pooling':
+        '''
+        Adaptive pooling operators for weakly labeled sound event detection
+        https://github.com/marl/autopool
+        '''
 
+        rnn1 = Bidirectional(LSTM(units=hidden_units_rnn, return_sequences=True))(a3)
+        p_dynamic = [TimeDistributed(Dense(1, activation='sigmoid'))(rnn1) for i in range(classes_num)]
+        p_static_array = [AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg())(p) for p in p_dynamic]
+        output = Concatenate()(p_static_array)
     else:
         raise Exception("Incorrect model_type!")
 
         # Build model
-    model = Model(inputs=input_layer, outputs=output_layer)
+    model = Model(inputs=input_layer, outputs=output)
     model.summary()
-    model = load_model('weights/md_50000_iters.h5')
+    model.load_weights('weights/md_50000_adap_iters.h5', by_name=True)
     return model
