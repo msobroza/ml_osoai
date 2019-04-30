@@ -169,6 +169,7 @@ def train(args):
         p_static_array = [AutoPool1D(axis=1, kernel_constraint=keras.constraints.non_neg())(p) for p in p_dynamic]        
         output = Concatenate()(p_static_array) 
         output_layer = Flatten()(output)
+        p_dynamic_layer = Concatenate()(p_dynamic)
     else:
         raise Exception("Incorrect model_type!")
 
