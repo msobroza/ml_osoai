@@ -1,0 +1,528 @@
+index,code,display_english,D,E,F,G,H,I,J
+0,/m/09x0r ,Speech,Parole,Parole,Parole,10,0.05,TDB,TBD,TBD
+1,/m/05zppz ,"Male speech, man speaking",Parole,Parole,Parole masculine,10,0.05,TDB,TBD,TBD
+2,/m/02zsn ,"Female speech, woman speaking",Parole,Parole,Parole féminine,10,0.05,TDB,TBD,TBD
+3,/m/0ytgt ,"Child speech, kid speaking",Parole,Parole,Parole d'enfant,10,0.05,TDB,TBD,TBD
+4,/m/01h8n0 ,Conversation,Parole,Parole,Conversation,10,0.05,TDB,TBD,TBD
+5,/m/02qldy ,"Narration, monologue",Parole,Parole,Monologue,10,0.05,TDB,TBD,TBD
+6,/m/0261r1 ,Babbling,Parole,Parole,Babillage,10,0.2,TDB,TBD,TBD
+7,/m/0brhx ,Speech synthesizer,Parole,Parole,Synthétiseur vocal,10,0.98,TDB,TBD,TBD
+8,/m/07p6fty ,Shout,Parole,Parole,Cri,10,0.05,TDB,TBD,TBD
+9,/m/07q4ntr ,Bellow,Cri,Cri,Mugissement,10,0.05,TDB,TBD,TBD
+10,/m/07rwj3x ,Whoop,Cri,Cri,Cri,10,0.05,TDB,TBD,TBD
+11,/m/07sr1lc ,Yell,Cri,Cri,Hurlement,10,0.05,TDB,TBD,TBD
+12,/m/04gy_2 ,Battle cry,Cri,Cri,Cri de guerre,10,0.4,TDB,TBD,TBD
+13,/t/dd00135 ,Children shouting,Cri,Cri,Cris d'enfants,10,0.05,TDB,TBD,TBD
+14,/m/03qc9zr ,Screaming,Cri,Cri,Hurlement,10,0.05,TDB,TBD,TBD
+15,/m/02rtxlg ,Whispering,Chuchottement,Chuchottement,Chuchotement,10,0.05,TDB,TBD,TBD
+16,/m/01j3sz ,Laughter,Rire,Rire,Rire,10,0.05,TDB,TBD,TBD
+17,/t/dd00001 ,Baby laughter,Rire,Rire,Rire de bébé,10,0.05,TDB,TBD,TBD
+18,/m/07r660_ ,Giggle,Rire,Rire,Eclat de rire,10,0.05,TDB,TBD,TBD
+19,/m/07s04w4 ,Snicker,Rire,Rire,Ricannement,10,0.2,TDB,TBD,TBD
+20,/m/07sq110 ,Belly laugh,Rire,Rire,Rire gras,10,0.05,TDB,TBD,TBD
+21,/m/07rgt08 ,"Chuckle, chortle",Rire,Rire,Gloussement,10,0.05,TDB,TBD,TBD
+22,/m/0463cq4 ,"Crying, sobbing",Pleurs,Pleurs,Sanglot,10,0.05,TDB,TBD,TBD
+23,/t/dd00002 ,"Baby cry, infant cry",Pleurs,Pleurs,Pleurs de bébé,10,0.05,TDB,TBD,TBD
+24,/m/07qz6j3 ,Whimper,Pleurs,Pleurs,Gémissement,10,0.05,TDB,TBD,TBD
+25,/m/07qw_06 ,"Wail, moan",Pleurs,Pleurs,Gémissement,10,0.05,TDB,TBD,TBD
+26,/m/07plz5l ,Sigh,Soupirs,Soupirs,Soupirs,10,0.05,TDB,TBD,TBD
+27,/m/015lz1 ,Singing,Chant,Chant,Chant,10,0.05,TDB,TBD,TBD
+28,/m/0l14jd ,Choir,Chant,Chant,Chorale,10,0.05,TDB,TBD,TBD
+29,/m/01swy6 ,Yodeling,Chant,Chant,Yodel,10,0.2,TDB,TBD,TBD
+30,/m/02bk07 ,Chant,Chant,Chant,Chant,10,0.2,TDB,TBD,TBD
+31,/m/01c194 ,Mantra,Chant,Chant,Mantra,10,0.99,TDB,TBD,TBD
+32,/t/dd00003 ,Male singing,Chant,Chant,Chant masculin,10,0.05,TDB,TBD,TBD
+33,/t/dd00004 ,Female singing,Chant,Chant,Chant féminin,10,0.05,TDB,TBD,TBD
+34,/t/dd00005 ,Child singing,Chant,Chant,Chant enfant,10,0.05,TDB,TBD,TBD
+35,/t/dd00006 ,Synthetic singing,Chant,Chant,Chant synthétique,10,0.98,TDB,TBD,TBD
+36,/m/06bxc ,Rapping,Chant,Chant,Rap,10,0.05,TDB,TBD,TBD
+37,/m/02fxyj ,Humming,Chant,Chant,Fredonnement,10,0.50,TDB,TBD,TBD
+38,/m/07s2xch ,Groan,Bruits humains,Bruits humains,Gémissement,10,0.05,TDB,TBD,TBD
+39,/m/07r4k75 ,Grunt,Bruits humains,Bruits humains,Grognement,10,0.05,TDB,TBD,TBD
+40,/m/01w250 ,Whistling,Bruits humains,Bruits humains,Sifflement,10,0.05,TDB,TBD,TBD
+41,/m/0lyf6 ,Breathing,Bruits humains,Bruits humains,Respiration,10,0.05,TDB,TBD,TBD
+42,/m/07mzm6 ,Wheeze,Bruits humains,Bruits humains,Respiration sifflante,10,0.05,TDB,TBD,TBD
+43,/m/01d3sd ,Snoring,Bruits humains,Bruits humains,Ronflement,10,0.05,TDB,TBD,TBD
+44,/m/07s0dtb ,Gasp,Bruits humains,Bruits humains,Haletement,10,0.2,TDB,TBD,TBD
+45,/m/07pyy8b ,Pant,Bruits humains,Bruits humains,Haletement,10,0.2,TDB,TBD,TBD
+46,/m/07q0yl5 ,Snort,Bruits humains,Bruits humains,Grognement,10,0.05,TDB,TBD,TBD
+47,/m/01b_21 ,Cough,Bruits humains,Bruits humains,Toux,10,0.05,TDB,TBD,TBD
+48,/m/0dl9sf8 ,Throat clearing,Bruits humains,Bruits humains,Raclage de la gorge,10,0.05,TDB,TBD,TBD
+49,/m/01hsr_ ,Sneeze,Bruits humains,Bruits humains,Éternuement,10,0.05,TDB,TBD,TBD
+50,/m/07ppn3j ,Sniff,Bruits humains,Bruits humains,Reniflement,10,0.05,TDB,TBD,TBD
+51,/m/06h7j ,Run,Bruits humains,Bruits humains,Bruit de pas rapide,10,0.05,TDB,TBD,TBD
+52,/m/07qv_x_ ,Shuffle,Bruits humains,Bruits humains,En trainant les pieds,10,0.98,TDB,TBD,TBD
+53,/m/07pbtc8 ,"Walk, footsteps",Bruits humains,Bruits humains,Bruit de pas,10,0.05,TDB,TBD,TBD
+54,/m/03cczk ,"Chewing, mastication",Bruits humains,Bruits humains,"Mastication, mastication",10,0.4,TDB,TBD,TBD
+55,/m/07pdhp0 ,Biting,Bruits humains,Bruits humains,Mordre,10,0.05,TDB,TBD,TBD
+56,/m/0939n_ ,Gargling,Bruits humains,Bruits humains,Gargarisme,10,0.05,TDB,TBD,TBD
+57,/m/01g90h ,Stomach rumble,Bruits humains,Bruits humains,Rumeur d'estomac,10,0.05,TDB,TBD,TBD
+58,/m/03q5_w ,"Burping, eructation",Bruits humains,Bruits humains,Rot,10,0.05,TDB,TBD,TBD
+59,/m/02p3nc ,Hiccup,Bruits humains,Bruits humains,Hoquet,10,0.05,TDB,TBD,TBD
+60,/m/02_nn ,Fart,Bruits humains,Bruits humains,Pet,10,0.2,TDB,TBD,TBD
+61,/m/0k65p ,Hands,Bruits humains,Bruits humains,Bruits de mains,10,0.2,TDB,TBD,TBD
+62,/m/025_jnm ,Finger snapping,Bruits humains,Bruits humains,Claquement des doigts,10,0.05,TDB,TBD,TBD
+63,/m/0l15bq ,Clapping,Bruits humains,Bruits humains,Applaudissements,10,0.05,TDB,TBD,TBD
+64,/m/01jg02 ,"Heart sounds, heartbeat",Bruits humains,Bruits humains,Battement de coeur,10,0.05,TDB,TBD,TBD
+65,/m/01jg1z ,Heart murmur,Bruits humains,Bruits humains,Souffle au cœur,10,0.05,TDB,TBD,TBD
+66,/m/053hz1 ,Cheering,Applaudissements,Applaudissements,Applaudissement,10,0.05,TDB,TBD,TBD
+67,/m/028ght ,Applause,Applaudissements,Applaudissements,Applaudissements,10,0.05,TDB,TBD,TBD
+68,/m/07rkbfh ,Chatter,Bavardage,Bavardage,Bavardage,10,0.05,TDB,TBD,TBD
+69,/m/03qtwd ,Crowd,Foule,Foule,Bruit de foule,10,0.05,TDB,TBD,TBD
+70,/m/07qfr4h ,"Hubbub, speech noise, speech babble",Brouhaha ,Brouhaha ,Brouhaha ,10,0.2,TDB,TBD,TBD
+71,/t/dd00013 ,Children playing,Enfants,Enfants,Enfants qui jouent,10,0.05,TDB,TBD,TBD
+72,/m/0jbk ,Animal,Animaux,Animaux,Animal,10,0.20,TDB,TBD,TBD
+73,/m/068hy ,"Domestic animals, pets",Animaux,Animaux,Animaux domestiques,10,0.20,TDB,TBD,TBD
+74,/m/0bt9lr ,Dog,Animaux,Animaux,aboiement,10,0.05,TDB,TBD,TBD
+75,/m/05tny_ ,Bark,Animaux,Animaux,aboiement,10,0.20,TDB,TBD,TBD
+76,/m/07r_k2n ,Yip,Animaux,Animaux,aboiement,10,0.20,TDB,TBD,TBD
+77,/m/07qf0zm ,Howl,Animaux,Animaux,Hurlement animal,10,0.95,TDB,TBD,TBD
+78,/m/07rc7d9 ,Bow-wow,Animaux,Animaux,Bow Wow,10,0.20,TDB,TBD,TBD
+79,/m/0ghcn6 ,Growling,Animaux,Animaux,Grondement animal,10,0.20,TDB,TBD,TBD
+80,/t/dd00136 ,Whimper (dog),Animaux,Animaux,Gemissement de chien,10,0.20,TDB,TBD,TBD
+81,/m/01yrx ,Cat,Animaux,Animaux,Chat,10,0.05,TDB,TBD,TBD
+82,/m/02yds9 ,Purr,Animaux,Animaux,Ronronner,10,0.20,TDB,TBD,TBD
+83,/m/07qrkrw ,Meow,Animaux,Animaux,Miaulement,10,0.05,TDB,TBD,TBD
+84,/m/07rjwbb ,Hiss,Animaux,Animaux,Sifflement de serpent,10,0.8,TDB,TBD,TBD
+85,/m/07r81j2 ,Caterwaul,Animaux,Animaux,Miaulement,10,0.20,TDB,TBD,TBD
+86,/m/0ch8v ,"Livestock, farm animals, working animals",Animaux,Animaux,Animaux de la ferme,10,0.40,TDB,TBD,TBD
+87,/m/03k3r ,Horse,Animaux,Animaux,henissement,10,0.20,TDB,TBD,TBD
+88,/m/07rv9rh ,Clip-clop,Animaux,Animaux,Clip-clop du cheval,10,0.05,TDB,TBD,TBD
+89,/m/07q5rw0 ,"Neigh, whinny",Animaux,Animaux,henissement,10,0.20,TDB,TBD,TBD
+90,/m/01xq0k1 ,"Cattle, bovinae",Animaux,Animaux,Meuglement,10,0.98,TDB,TBD,TBD
+91,/m/07rpkh9 ,Moo,Animaux,Animaux,Meuglement,10,0.98,TDB,TBD,TBD
+92,/m/0239kh ,Cowbell,Animaux,Animaux,Cloche de vache,10,0.20,TDB,TBD,TBD
+93,/m/068zj ,Pig,Animaux,Animaux,Porc,10,0.20,TDB,TBD,TBD
+94,/t/dd00018 ,Oink,Animaux,Animaux,Grognement de cochon,10,0.40,TDB,TBD,TBD
+95,/m/03fwl ,Goat,Animaux,Animaux,Chèvre,10,0.2,TDB,TBD,TBD
+96,/m/07q0h5t ,Bleat,Animaux,Animaux,Bêler,10,0.2,TDB,TBD,TBD
+97,/m/07bgp ,Sheep,Animaux,Animaux,Bêler ,10,0.2,TDB,TBD,TBD
+98,/m/025rv6n ,Fowl,Animaux,Animaux,Volaille,10,0.98,TDB,TBD,TBD
+99,/m/09b5t ,"Chicken, rooster",Animaux,Animaux,"Poulet, coq",10,0.98,TDB,TBD,TBD
+100,/m/07st89h ,Cluck,Animaux,Animaux,Gloussement,10,0.2,TDB,TBD,TBD
+101,/m/07qn5dc ,"Crowing, cock-a-doodle-doo",Animaux,Animaux,Cocorico ,10,0.2,TDB,TBD,TBD
+102,/m/01rd7k ,Turkey,Animaux,Animaux,dinde,10,0.2,TDB,TBD,TBD
+103,/m/07svc2k ,Gobble,Animaux,Animaux,Glouglou,10,0.2,TDB,TBD,TBD
+104,/m/09ddx ,Duck,Animaux,Animaux,canard,10,0.2,TDB,TBD,TBD
+105,/m/07qdb04 ,Quack,Animaux,Animaux,coin coin,10,0.2,TDB,TBD,TBD
+106,/m/0dbvp ,Goose,Animaux,Animaux,Oie,10,0.2,TDB,TBD,TBD
+107,/m/07qwf61 ,Honk,Animaux,Animaux,Cacardement de l'oie,10,0.2,TDB,TBD,TBD
+108,/m/01280g ,Wild animals,Animaux,Animaux,Animaux sauvages,10,0.2,TDB,TBD,TBD
+109,/m/0cdnk ,"Roaring cats (lions, tigers)",Animaux,Animaux,Felins rugissants,10,0.2,TDB,TBD,TBD
+110,/m/04cvmfc ,Roar,Animaux,Animaux,Rugir,10,0.2,TDB,TBD,TBD
+111,/m/015p6 ,Bird,Animaux,Animaux,Oiseau,10,0.4,TDB,TBD,TBD
+112,/m/020bb7 ,"Bird vocalization, bird call, bird song",Animaux,Animaux,chant d'oiseau,10,0.98,TDB,TBD,TBD
+113,/m/07pggtn ,"Chirp, tweet",Animaux,Animaux,Gazouillis d'oiseaux,10,0.4,TDB,TBD,TBD
+114,/m/07sx8x_ ,Squawk,Animaux,Animaux,Cri d'oiseaux,10,0.4,TDB,TBD,TBD
+115,/m/0h0rv ,"Pigeon, dove",Animaux,Animaux,pigeon,10,0.4,TDB,TBD,TBD
+116,/m/07r_25d ,Coo,Animaux,Animaux,roucoulement de pigeon,10,0.4,TDB,TBD,TBD
+117,/m/04s8yn ,Crow,Animaux,Animaux,corbeau,10,0.4,TDB,TBD,TBD
+118,/m/07r5c2p ,Caw,Animaux,Animaux,Croassement,10,0.4,TDB,TBD,TBD
+119,/m/09d5_ ,Owl,Animaux,Animaux,Hibou,10,0.9,TDB,TBD,TBD
+120,/m/07r_80w ,Hoot,Animaux,Animaux,Huée,10,0.9,TDB,TBD,TBD
+121,/m/05_wcq ,"Bird flight, flapping wings",Animaux,Animaux,"Vol d'oiseau, battement d'ailes",10,0.9,TDB,TBD,TBD
+122,/m/01z5f ,"Canidae, dogs, wolves",Animaux,Animaux,Canidés,10,0.4,TDB,TBD,TBD
+123,/m/06hps ,"Rodents, rats, mice",Animaux,Animaux,Rongeurs,10,0.9,TDB,TBD,TBD
+124,/m/04rmv ,Mouse,Animaux,Animaux,Souris,10,0.97,TDB,TBD,TBD
+125,/m/07r4gkf ,Patter,Animaux,Animaux,Crépiter,10,0.4,TDB,TBD,TBD
+126,/m/03vt0 ,Insect,Animaux,Animaux,Insecte,10,0.4,TDB,TBD,TBD
+127,/m/09xqv ,Cricket,Animaux,Animaux,Criquet,10,0.4,TDB,TBD,TBD
+128,/m/09f96 ,Mosquito,Animaux,Animaux,Moustique,10,0.4,TDB,TBD,TBD
+129,/m/0h2mp ,"Fly, housefly",Animaux,Animaux,Mouche domestique,10,0.2,TDB,TBD,TBD
+130,/m/07pjwq1 ,Buzz,Animaux,Animaux,Bourdonnement,10,0.2,TDB,TBD,TBD
+131,/m/01h3n ,"Bee, wasp, etc.",Animaux,Animaux,"Abeille, guêpe",10,0.4,TDB,TBD,TBD
+132,/m/09ld4 ,Frog,Animaux,Animaux,Grenouille,10,0.4,TDB,TBD,TBD
+133,/m/07st88b ,Croak,Animaux,Animaux,Croassement de grenouille,10,0.4,TDB,TBD,TBD
+134,/m/078jl ,Snake,Animaux,Animaux,Serpent,10,0.4,TDB,TBD,TBD
+135,/m/07qn4z3 ,Rattle,Animaux,Animaux,Serpent à sonnettes,10,0.4,TDB,TBD,TBD
+136,/m/032n05 ,Whale vocalization,Animaux,Animaux,Vocalisation des baleines,10,0.98,TDB,TBD,TBD
+137,/m/04rlf ,Music,Musique,Musique,Musique,10,0.2,TDB,TBD,TBD
+138,/m/04szw ,Musical instrument,Musique,Musique,Instrument de musique,10,0.2,TDB,TBD,TBD
+139,/m/0fx80y ,Plucked string instrument,Musique,Musique,Instrument à cordes pincées,10,0.2,TDB,TBD,TBD
+140,/m/0342h ,Guitar,Musique,Musique,Guitare,10,0.2,TDB,TBD,TBD
+141,/m/02sgy ,Electric guitar,Musique,Musique,Guitare électrique,10,0.2,TDB,TBD,TBD
+142,/m/018vs ,Bass guitar,Musique,Musique,Guitare basse,10,0.2,TDB,TBD,TBD
+143,/m/042v_gx ,Acoustic guitar,Musique,Musique,Guitare acoustique,10,0.2,TDB,TBD,TBD
+144,/m/06w87 ,"Steel guitar, slide guitar",Musique,Musique,"Guitare en acier, guitare slide",10,0.2,TDB,TBD,TBD
+145,/m/01glhc ,Tapping (guitar technique),Musique,Musique,Tapping (technique de guitare),10,0.2,TDB,TBD,TBD
+146,/m/07s0s5r ,Strum,Musique,Musique,Gratter,10,0.2,TDB,TBD,TBD
+147,/m/018j2 ,Banjo,Musique,Musique,Banjo,10,0.2,TDB,TBD,TBD
+148,/m/0jtg0 ,Sitar,Musique,Musique,Sitar,10,0.2,TDB,TBD,TBD
+149,/m/04rzd ,Mandolin,Musique,Musique,Mandoline,10,0.2,TDB,TBD,TBD
+150,/m/01bns_ ,Zither,Musique,Musique,Cithare,10,0.2,TDB,TBD,TBD
+151,/m/07xzm ,Ukulele,Musique,Musique,Ukulélé,10,0.2,TDB,TBD,TBD
+152,/m/05148p4 ,Keyboard (musical),Musique,Musique,Clavier (musical),10,0.2,TDB,TBD,TBD
+153,/m/05r5c ,Piano,Musique,Musique,Piano,10,0.2,TDB,TBD,TBD
+154,/m/01s0ps ,Electric piano,Musique,Musique,Piano électrique,10,0.2,TDB,TBD,TBD
+155,/m/013y1f ,Organ,Musique,Musique,Organe,10,0.2,TDB,TBD,TBD
+156,/m/03xq_f ,Electronic organ,Musique,Musique,Orgue électronique,10,0.2,TDB,TBD,TBD
+157,/m/03gvt ,Hammond organ,Musique,Musique,Orgue Hammond,10,0.2,TDB,TBD,TBD
+158,/m/0l14qv ,Synthesizer,Musique,Musique,Synthétiseur,10,0.2,TDB,TBD,TBD
+159,/m/01v1d8 ,Sampler,Musique,Musique,Échantillonneur,10,0.2,TDB,TBD,TBD
+160,/m/03q5t ,Harpsichord,Musique,Musique,Clavecin,10,0.2,TDB,TBD,TBD
+161,/m/0l14md ,Percussion,Musique,Musique,Percussion,10,0.2,TDB,TBD,TBD
+162,/m/02hnl ,Drum kit,Musique,Musique,Batterie,10,0.2,TDB,TBD,TBD
+163,/m/0cfdd ,Drum machine,Musique,Musique,Boîte à rythme,10,0.2,TDB,TBD,TBD
+164,/m/026t6 ,Drum,Musique,Musique,Tambour,10,0.2,TDB,TBD,TBD
+165,/m/06rvn ,Snare drum,Musique,Musique,Caisse claire,10,0.2,TDB,TBD,TBD
+166,/m/03t3fj ,Rimshot,Musique,Musique,Rimshot,10,0.2,TDB,TBD,TBD
+167,/m/02k_mr ,Drum roll,Musique,Musique,Roulement de tambour,10,0.2,TDB,TBD,TBD
+168,/m/0bm02 ,Bass drum,Musique,Musique,Grosse caisse,10,0.2,TDB,TBD,TBD
+169,/m/011k_j ,Timpani,Musique,Musique,Timbales,10,0.2,TDB,TBD,TBD
+170,/m/01p970 ,Tabla,Musique,Musique,Tabla,10,0.2,TDB,TBD,TBD
+171,/m/01qbl ,Cymbal,Musique,Musique,Cymbale,10,0.2,TDB,TBD,TBD
+172,/m/03qtq ,Hi-hat,Musique,Musique,Salut chapeau,10,0.2,TDB,TBD,TBD
+173,/m/01sm1g ,Wood block,Musique,Musique,Bloc de bois,10,0.2,TDB,TBD,TBD
+174,/m/07brj ,Tambourine,Musique,Musique,Tambourin,10,0.2,TDB,TBD,TBD
+175,/m/05r5wn ,Rattle (instrument),Musique,Musique,Hochet (instrument),10,0.2,TDB,TBD,TBD
+176,/m/0xzly ,Maraca,Musique,Musique,Maraca,10,0.2,TDB,TBD,TBD
+177,/m/0mbct ,Gong,Musique,Musique,Gong,10,0.2,TDB,TBD,TBD
+178,/m/016622 ,Tubular bells,Musique,Musique,Cloches tubulaires,10,0.2,TDB,TBD,TBD
+179,/m/0j45pbj ,Mallet percussion,Musique,Musique,Percussion Mallet,10,0.2,TDB,TBD,TBD
+180,/m/0dwsp ,"Marimba, xylophone",Musique,Musique,"Marimba, xylophone",10,0.2,TDB,TBD,TBD
+181,/m/0dwtp ,Glockenspiel,Musique,Musique,Glockenspiel,10,0.2,TDB,TBD,TBD
+182,/m/0dwt5 ,Vibraphone,Musique,Musique,Vibraphone,10,0.2,TDB,TBD,TBD
+183,/m/0l156b ,Steelpan,Musique,Musique,Casserole en acier,10,0.2,TDB,TBD,TBD
+184,/m/05pd6 ,Orchestra,Musique,Musique,Orchestre,10,0.2,TDB,TBD,TBD
+185,/m/01kcd ,Brass instrument,Musique,Musique,Instrument à vent,10,0.2,TDB,TBD,TBD
+186,/m/0319l ,French horn,Musique,Musique,cor français,10,0.2,TDB,TBD,TBD
+187,/m/07gql ,Trumpet,Musique,Musique,Trompette,10,0.2,TDB,TBD,TBD
+188,/m/07c6l ,Trombone,Musique,Musique,Trombone,10,0.2,TDB,TBD,TBD
+189,/m/0l14_3 ,Bowed string instrument,Musique,Musique,Instrument à cordes frottées,10,0.2,TDB,TBD,TBD
+190,/m/02qmj0d ,String section,Musique,Musique,Section de cordes,10,0.2,TDB,TBD,TBD
+191,/m/07y_7 ,"Violin, fiddle",Musique,Musique,"Violon, violon",10,0.2,TDB,TBD,TBD
+192,/m/0d8_n ,Pizzicato,Musique,Musique,Pizzicato,10,0.2,TDB,TBD,TBD
+193,/m/01xqw ,Cello,Musique,Musique,Violoncelle,10,0.2,TDB,TBD,TBD
+194,/m/02fsn ,Double bass,Musique,Musique,Contrebasse,10,0.2,TDB,TBD,TBD
+195,/m/085jw ,"Wind instrument, woodwind instrument",Musique,Musique,"Instrument à vent, instrument à vent",10,0.2,TDB,TBD,TBD
+196,/m/0l14j_ ,Flute,Musique,Musique,Flûte,10,0.2,TDB,TBD,TBD
+197,/m/06ncr ,Saxophone,Musique,Musique,Saxophone,10,0.2,TDB,TBD,TBD
+198,/m/01wy6 ,Clarinet,Musique,Musique,Clarinette,10,0.2,TDB,TBD,TBD
+199,/m/03m5k ,Harp,Musique,Musique,Harpe,10,0.2,TDB,TBD,TBD
+200,/m/0395lw ,Bell,Musique,Musique,Cloche,10,0.2,TDB,TBD,TBD
+201,/m/03w41f ,Church bell,Musique,Musique,Cloche d'église,10,0.2,TDB,TBD,TBD
+202,/m/027m70_ ,Jingle bell,Musique,Musique,Grelot,10,0.2,TDB,TBD,TBD
+203,/m/0gy1t2s ,Bicycle bell,Musique,Musique,Cloche de bicyclette,10,0.2,TDB,TBD,TBD
+204,/m/07n_g ,Tuning fork,Musique,Musique,Diapason,10,0.2,TDB,TBD,TBD
+205,/m/0f8s22 ,Chime,Musique,Musique,Carillon,10,0.2,TDB,TBD,TBD
+206,/m/026fgl ,Wind chime,Musique,Musique,Carillon de vent,10,0.2,TDB,TBD,TBD
+207,/m/0150b9 ,Change ringing (campanology),Musique,Musique,Changer la sonnerie,10,0.2,TDB,TBD,TBD
+208,/m/03qjg ,Harmonica,Musique,Musique,Harmonica,10,0.2,TDB,TBD,TBD
+209,/m/0mkg ,Accordion,Musique,Musique,Accordéon,10,0.2,TDB,TBD,TBD
+210,/m/0192l ,Bagpipes,Musique,Musique,Cornemuse,10,0.2,TDB,TBD,TBD
+211,/m/02bxd ,Didgeridoo,Musique,Musique,Didgeridoo,10,0.2,TDB,TBD,TBD
+212,/m/0l14l2 ,Shofar,Musique,Musique,Shofar,10,0.2,TDB,TBD,TBD
+213,/m/07kc_ ,Theremin,Musique,Musique,Theremin,10,0.2,TDB,TBD,TBD
+214,/m/0l14t7 ,Singing bowl,Musique,Musique,Bol chantant,10,0.2,TDB,TBD,TBD
+215,/m/01hgjl ,Scratching (performance technique),Musique,Musique,Gratter ,10,0.2,TDB,TBD,TBD
+216,/m/064t9 ,Pop music,Musique,Musique,Musique pop,10,0.2,TDB,TBD,TBD
+217,/m/0glt670 ,Hip hop music,Musique,Musique,Musique hip hop,10,0.2,TDB,TBD,TBD
+218,/m/02cz_7 ,Beatboxing,Musique,Musique,Beatboxing,10,0.2,TDB,TBD,TBD
+219,/m/06by7 ,Rock music,Musique,Musique,Musique rock,10,0.2,TDB,TBD,TBD
+220,/m/03lty ,Heavy metal,Musique,Musique,Heavy métal,10,0.2,TDB,TBD,TBD
+221,/m/05r6t ,Punk rock,Musique,Musique,Punk rock,10,0.2,TDB,TBD,TBD
+222,/m/0dls3 ,Grunge,Musique,Musique,Grunge,10,0.2,TDB,TBD,TBD
+223,/m/0dl5d ,Progressive rock,Musique,Musique,Rock progressif,10,0.2,TDB,TBD,TBD
+224,/m/07sbbz2 ,Rock and roll,Musique,Musique,Rock and roll,10,0.2,TDB,TBD,TBD
+225,/m/05w3f ,Psychedelic rock,Musique,Musique,Rock psychédélique,10,0.2,TDB,TBD,TBD
+226,/m/06j6l ,Rhythm and blues,Musique,Musique,Rythme et blues,10,0.2,TDB,TBD,TBD
+227,/m/0gywn ,Soul music,Musique,Musique,Musique soul,10,0.2,TDB,TBD,TBD
+228,/m/06cqb ,Reggae,Musique,Musique,Reggae,10,0.2,TDB,TBD,TBD
+229,/m/01lyv ,Country,Musique,Musique,Pays,10,0.2,TDB,TBD,TBD
+230,/m/015y_n ,Swing music,Musique,Musique,Musique swing,10,0.2,TDB,TBD,TBD
+231,/m/0gg8l ,Bluegrass,Musique,Musique,Bluegrass,10,0.2,TDB,TBD,TBD
+232,/m/02x8m ,Funk,Musique,Musique,Trouille,10,0.2,TDB,TBD,TBD
+233,/m/02w4v ,Folk music,Musique,Musique,Musique folklorique,10,0.2,TDB,TBD,TBD
+234,/m/06j64v ,Middle Eastern music,Musique,Musique,Musique moyen-orientale,10,0.2,TDB,TBD,TBD
+235,/m/03_d0 ,Jazz,Musique,Musique,le jazz,10,0.2,TDB,TBD,TBD
+236,/m/026z9 ,Disco,Musique,Musique,Disco,10,0.2,TDB,TBD,TBD
+237,/m/0ggq0m ,Classical music,Musique,Musique,Musique classique,10,0.2,TDB,TBD,TBD
+238,/m/05lls ,Opera,Musique,Musique,Opéra,10,0.2,TDB,TBD,TBD
+239,/m/02lkt ,Electronic music,Musique,Musique,Musique électronique,10,0.2,TDB,TBD,TBD
+240,/m/03mb9 ,House music,Musique,Musique,Musique house,10,0.2,TDB,TBD,TBD
+241,/m/07gxw ,Techno,Musique,Musique,Techno,10,0.2,TDB,TBD,TBD
+242,/m/07s72n ,Dubstep,Musique,Musique,Dubstep,10,0.2,TDB,TBD,TBD
+243,/m/0283d ,Drum and bass,Musique,Musique,Tambour et basse,10,0.2,TDB,TBD,TBD
+244,/m/0m0jc ,Electronica,Musique,Musique,Electronique,10,0.2,TDB,TBD,TBD
+245,/m/08cyft ,Electronic dance music,Musique,Musique,Musique de danse électronique,10,0.2,TDB,TBD,TBD
+246,/m/0fd3y ,Ambient music,Musique,Musique,Musique ambiante,10,0.2,TDB,TBD,TBD
+247,/m/07lnk ,Trance music,Musique,Musique,Musique de transe,10,0.2,TDB,TBD,TBD
+248,/m/0g293 ,Music of Latin America,Musique,Musique,Musique d'Amérique latine,10,0.2,TDB,TBD,TBD
+249,/m/0ln16 ,Salsa music,Musique,Musique,Musique salsa,10,0.2,TDB,TBD,TBD
+250,/m/0326g ,Flamenco,Musique,Musique,Flamenco,10,0.2,TDB,TBD,TBD
+251,/m/0155w ,Blues,Musique,Musique,Blues,10,0.2,TDB,TBD,TBD
+252,/m/05fw6t ,Music for children,Musique,Musique,Musique pour enfants,10,0.2,TDB,TBD,TBD
+253,/m/02v2lh ,New-age music,Musique,Musique,Musique new age,10,0.2,TDB,TBD,TBD
+254,/m/0y4f8 ,Vocal music,Musique,Musique,Musique vocale,10,0.2,TDB,TBD,TBD
+255,/m/0z9c ,A capella,Musique,Musique,A capella,10,0.2,TDB,TBD,TBD
+256,/m/0164x2 ,Music of Africa,Musique,Musique,Musique d'Afrique,10,0.2,TDB,TBD,TBD
+257,/m/0145m ,Afrobeat,Musique,Musique,Afrobeat,10,0.2,TDB,TBD,TBD
+258,/m/02mscn ,Christian music,Musique,Musique,musique chrétienne,10,0.2,TDB,TBD,TBD
+259,/m/016cjb ,Gospel music,Musique,Musique,Musique gospel,10,0.2,TDB,TBD,TBD
+260,/m/028sqc ,Music of Asia,Musique,Musique,Musique d'Asie,10,0.2,TDB,TBD,TBD
+261,/m/015vgc ,Carnatic music,Musique,Musique,Musique carnatique,10,0.2,TDB,TBD,TBD
+262,/m/0dq0md ,Music of Bollywood,Musique,Musique,Musique de Bollywood,10,0.2,TDB,TBD,TBD
+263,/m/06rqw ,Ska,Musique,Musique,Ska,10,0.2,TDB,TBD,TBD
+264,/m/02p0sh1 ,Traditional music,Musique,Musique,Musique traditionnelle,10,0.2,TDB,TBD,TBD
+265,/m/05rwpb ,Independent music,Musique,Musique,Musique indépendante,10,0.2,TDB,TBD,TBD
+266,/m/074ft ,Song,Musique,Musique,Chanson,10,0.2,TDB,TBD,TBD
+267,/m/025td0t ,Background music,Musique,Musique,Musique de fond,10,0.2,TDB,TBD,TBD
+268,/m/02cjck ,Theme music,Musique,Musique,Musique à thème,10,0.2,TDB,TBD,TBD
+269,/m/03r5q_ ,Jingle (music),Musique,Musique,Jingle (musique),10,0.2,TDB,TBD,TBD
+270,/m/0l14gg ,Soundtrack music,Musique,Musique,Musique de bande son,10,0.2,TDB,TBD,TBD
+271,/m/07pkxdp ,Lullaby,Musique,Musique,Berceuse,10,0.2,TDB,TBD,TBD
+272,/m/01z7dr ,Video game music,Musique,Musique,Musique de jeux vidéo,10,0.2,TDB,TBD,TBD
+273,/m/0140xf ,Christmas music,Musique,Musique,Musique de noel,10,0.2,TDB,TBD,TBD
+274,/m/0ggx5q ,Dance music,Musique,Musique,Musique de danse,10,0.2,TDB,TBD,TBD
+275,/m/04wptg ,Wedding music,Musique,Musique,Musique de mariage,10,0.2,TDB,TBD,TBD
+276,/t/dd00031 ,Happy music,Musique,Musique,Bonne musique,10,0.2,TDB,TBD,TBD
+277,/t/dd00032 ,Funny music,Musique,Musique,Musique drôle,10,0.2,TDB,TBD,TBD
+278,/t/dd00033 ,Sad music,Musique,Musique,Musique triste,10,0.2,TDB,TBD,TBD
+279,/t/dd00034 ,Tender music,Musique,Musique,Musique d'appel d'offres,10,0.2,TDB,TBD,TBD
+280,/t/dd00035 ,Exciting music,Musique,Musique,Musique passionnante,10,0.2,TDB,TBD,TBD
+281,/t/dd00036 ,Angry music,Musique,Musique,Musique en colère,10,0.2,TDB,TBD,TBD
+282,/t/dd00037 ,Scary music,Musique,Musique,Musique effrayante,10,0.2,TDB,TBD,TBD
+283,/m/03m9d0z ,Wind,L'air,L'air,Vent,10,0.2,TDB,TBD,TBD
+284,/m/09t49 ,Rustling leaves,L'air,L'air,Bruissement des feuilles,10,0.2,TDB,TBD,TBD
+285,/t/dd00092 ,Wind noise (microphone),L'air,L'air,Bruit du vent  dans le microphone,10,0.2,TDB,TBD,TBD
+286,/m/0jb2l ,Thunderstorm,Mauvais temps,Mauvais temps,Orage,10,0.2,TDB,TBD,TBD
+287,/m/0ngt1 ,Thunder,Mauvais temps,Mauvais temps,Tonnerre,10,0.2,TDB,TBD,TBD
+288,/m/0838f ,Water,Mauvais temps,Mauvais temps,Eau,10,0.2,TDB,TBD,TBD
+289,/m/06mb1 ,Rain,Mauvais temps,Mauvais temps,Pluie,10,0.2,TDB,TBD,TBD
+290,/m/07r10fb ,Raindrop,Mauvais temps,Mauvais temps,Goutte de pluie,10,0.2,TDB,TBD,TBD
+291,/t/dd00038 ,Rain on surface,Mauvais temps,Mauvais temps,Pluie en surface,10,0.2,TDB,TBD,TBD
+292,/m/0j6m2 ,Stream,L'eau ,L'eau ,Courant,10,0.2,TDB,TBD,TBD
+293,/m/0j2kx ,Waterfall,L'eau ,L'eau ,Cascade,10,0.2,TDB,TBD,TBD
+294,/m/05kq4 ,Ocean,L'eau ,L'eau ,Océan,10,0.2,TDB,TBD,TBD
+295,/m/034srq ,"Waves, surf",L'eau ,L'eau ,Vagues,10,0.2,TDB,TBD,TBD
+296,/m/06wzb ,Steam,L'eau ,L'eau ,Vapeur,10,0.2,TDB,TBD,TBD
+297,/m/07swgks ,Gurgling,L'eau ,L'eau ,Gargouillis,10,0.2,TDB,TBD,TBD
+298,/m/02_41 ,Fire,Le feu,Le feu,Feu,10,0.2,TDB,TBD,TBD
+299,/m/07pzfmf ,Crackle,Le feu,Le feu,Crépiter,10,0.2,TDB,TBD,TBD
+300,/m/07yv9 ,Vehicle,Vehicule,Vehicule,Véhicule,10,0.05,TDB,TBD,TBD
+301,/m/019jd ,"Boat, Water vehicle",Bateau,Bateau,Bateau,10,0.2,TDB,TBD,TBD
+302,/m/0hsrw ,"Sailboat, sailing ship",Bateau,Bateau,Voilier,10,0.2,TDB,TBD,TBD
+303,/m/056ks2 ,"Rowboat, canoe, kayak",Bateau,Bateau,Canoë kayak,10,0.2,TDB,TBD,TBD
+304,/m/02rlv9 ,"Motorboat, speedboat",Bateau,Bateau,Bateau à moteur,10,0.2,TDB,TBD,TBD
+305,/m/06q74 ,Ship,Bateau,Bateau,Navire,10,0.2,TDB,TBD,TBD
+306,/m/012f08 ,Motor vehicle (road),Voiture,Voiture,Véhicule automobile,10,0.2,TDB,TBD,TBD
+307,/m/0k4j ,Car,Voiture,Voiture,Voiture,10,0.2,TDB,TBD,TBD
+308,/m/0912c9 ,"Vehicle horn, car horn, honking",Voiture,Voiture,Klaxon de véhicule,10,0.2,TDB,TBD,TBD
+309,/m/07qv_d5 ,Toot,Voiture,Voiture,Siffler,10,0.2,TDB,TBD,TBD
+310,/m/02mfyn ,Car alarm,Voiture,Voiture,Alarme de voiture,10,0.2,TDB,TBD,TBD
+311,/m/04gxbd ,"Power windows, electric windows",Voiture,Voiture,Vitres électriques,10,0.2,TDB,TBD,TBD
+312,/m/07rknqz ,Skidding,Voiture,Voiture,Dérapage,10,0.2,TDB,TBD,TBD
+313,/m/0h9mv ,Tire squeal,Voiture,Voiture,Crissement de pneu,10,0.2,TDB,TBD,TBD
+314,/t/dd00134 ,Car passing by,Voiture,Voiture,Voiture qui passe,10,0.2,TDB,TBD,TBD
+315,/m/0ltv ,"Race car, auto racing",Voiture,Voiture,Voiture de course,10,0.2,TDB,TBD,TBD
+316,/m/07r04 ,Truck,Voiture,Voiture,Un camion,10,0.2,TDB,TBD,TBD
+317,/m/0gvgw0 ,Air brake,Voiture,Voiture,Frein pneumatique,10,0.2,TDB,TBD,TBD
+318,/m/05x_td ,"Air horn, truck horn",Voiture,Voiture,Klaxon de camion,10,0.2,TDB,TBD,TBD
+319,/m/02rhddq ,Reversing beeps,Voiture,Voiture,Bips de recul,10,0.2,TDB,TBD,TBD
+320,/m/03cl9h ,"Ice cream truck, ice cream van",Voiture,Voiture,Camion de crème glacée,10,0.2,TDB,TBD,TBD
+321,/m/01bjv ,Bus,Autobus,Autobus,Autobus,10,0.05,TDB,TBD,TBD
+322,/m/03j1ly ,Emergency vehicle,Véhicule d'urgence,Véhicule d'urgence,Véhicule d'urgence,10,0.05,TDB,TBD,TBD
+323,/m/04qvtq ,Police car (siren),Police,Police,Sirene de police,10,0.2,TDB,TBD,TBD
+324,/m/012n7d ,Ambulance (siren),Ambulance,Ambulance,Sirene d'Ambulance ,10,0.05,TDB,TBD,TBD
+325,/m/012ndj ,"Fire engine, fire truck (siren)",Pompier,Pompier,Sirene de pompiers ,10,0.05,TDB,TBD,TBD
+326,/m/04_sv ,Motorcycle,Moto,Moto,Moto,10,0.2,TDB,TBD,TBD
+327,/m/0btp2 ,"Traffic noise, roadway noise",Chaussée,Chaussée,Bruit de la circulation,10,0.05,TDB,TBD,TBD
+328,/m/06d_3 ,Rail transport,Train,Train,Transport ferroviaire,10,0.05,TDB,TBD,TBD
+329,/m/07jdr ,Train,Train,Train,Train,10,0.05,TDB,TBD,TBD
+330,/m/04zmvq ,Train whistle,Train,Train,Sifflet de train,10,0.2,TDB,TBD,TBD
+331,/m/0284vy3 ,Train horn,Train,Train,Corne de train,10,0.2,TDB,TBD,TBD
+332,/m/01g50p ,"Railroad car, train wagon",Train,Train,Wagon de chemin de fer,10,0.2,TDB,TBD,TBD
+333,/t/dd00048 ,Train wheels squealing,Train,Train,Crissement des roues du train,10,0.2,TDB,TBD,TBD
+334,/m/0195fx ,"Subway, metro, underground",Métro,Métro,Métro,10,0.2,TDB,TBD,TBD
+335,/m/0k5j ,Aircraft,Avion,Avion,Avion,10,0.05,TDB,TBD,TBD
+336,/m/014yck ,Aircraft engine,Avion,Avion,Moteur d'avion,10,0.05,TDB,TBD,TBD
+337,/m/04229 ,Jet engine,Avion,Avion,Moteur d'avion,10,0.05,TDB,TBD,TBD
+338,/m/02l6bg ,"Propeller, airscrew",Avion,Avion,Hélice,10,0.2,TDB,TBD,TBD
+339,/m/09ct_ ,Helicopter,Helicoptere,Helicoptere,Hélicoptère,10,0.05,TDB,TBD,TBD
+340,/m/0cmf2 ,"Fixed-wing aircraft, airplane",Avion,Avion,Avion,10,0.05,TDB,TBD,TBD
+341,/m/0199g ,Bicycle,Vélo,Vélo,Vélo,10,0.05,TDB,TBD,TBD
+342,/m/06_fw ,Skateboard,Planche à roulette,Planche à roulette,planche à roulette,10,0.5,TDB,TBD,TBD
+343,/m/02mk9 ,Engine,Moteur,Moteur,Moteur,10,0.05,TDB,TBD,TBD
+344,/t/dd00065 ,Light engine (high frequency),Moteur,Moteur,Moteur léger (haute fréquence),10,0.05,TDB,TBD,TBD
+345,/m/08j51y ,"Dental drill, dentist's drill",Moteur,Moteur,Perceuse de dentiste,10,0.2,TDB,TBD,TBD
+346,/m/01yg9g ,Lawn mower,Moteur,Moteur,Tondeuse à gazon,10,0.2,TDB,TBD,TBD
+347,/m/01j4z9 ,Chainsaw,Moteur,Moteur,Tronçonneuse,10,0.05,TDB,TBD,TBD
+348,/t/dd00066 ,Medium engine (mid frequency),Moteur,Moteur,Moteur moyen (moyenne fréquence),10,0.2,TDB,TBD,TBD
+349,/t/dd00067 ,Heavy engine (low frequency),Moteur,Moteur,Moteur lourd (basse fréquence),10,0.2,TDB,TBD,TBD
+350,/m/01h82_ ,Engine knocking,Moteur,Moteur,Coup de moteur,10,0.05,TDB,TBD,TBD
+351,/t/dd00130 ,Engine starting,Moteur,Moteur,Démarrage moteur,10,0.05,TDB,TBD,TBD
+352,/m/07pb8fc ,Idling,Moteur,Moteur,Moteur au ralenti,10,0.05,TDB,TBD,TBD
+353,/m/07q2z82 ,"Accelerating, revving, vroom",Moteur,Moteur,"Accélération, revving, vroom",10,0.05,TDB,TBD,TBD
+354,/m/02dgv ,Door,Porte,Porte,Porte,10,0.05,TDB,TBD,TBD
+355,/m/03wwcy ,Doorbell,Porte,Porte,Sonnette,10,0.05,TDB,TBD,TBD
+356,/m/07r67yg ,Ding-dong,Porte,Porte,Ding Dong,10,0.05,TDB,TBD,TBD
+357,/m/02y_763 ,Sliding door,Porte,Porte,Porte coulissante,10,0.05,TDB,TBD,TBD
+358,/m/07rjzl8 ,Slam,Porte,Porte,claquer,10,0.05,TDB,TBD,TBD
+359,/m/07r4wb8 ,Knock,Porte,Porte,Frappe,10,0.05,TDB,TBD,TBD
+360,/m/07qcpgn ,Tap,Robinet,Robinet,Robinet,10,0.4,TDB,TBD,TBD
+361,/m/07q6cd_ ,Squeak,Porte,Porte,Grincer,10,0.05,TDB,TBD,TBD
+362,/m/0642b4 ,Cupboard open or close,Armoire,Armoire,Armoire ouverte ou fermée,10,0.2,TDB,TBD,TBD
+363,/m/0fqfqc ,Drawer open or close,Armoire,Armoire,Tiroir ouvert ou fermé,10,0.2,TDB,TBD,TBD
+364,/m/04brg2 ,"Dishes, pots, and pans",Cuisine,Cuisine,"Vaisselle, casseroles et poêles",10,0.2,TDB,TBD,TBD
+365,/m/023pjk ,"Cutlery, silverware",Cuisine,Cuisine,"Couverts, couverts",10,0.2,TDB,TBD,TBD
+366,/m/07pn_8q ,Chopping (food),Cuisine,Cuisine,Couper de la nourriture,10,0.2,TDB,TBD,TBD
+367,/m/0dxrf ,Frying (food),Cuisine,Cuisine,Faire frire la nourriture,10,0.2,TDB,TBD,TBD
+368,/m/0fx9l ,Microwave oven,Cuisine,Cuisine,Four micro-onde,10,0.2,TDB,TBD,TBD
+369,/m/02pjr4 ,Blender,Cuisine,Cuisine,Mixeur,10,0.2,TDB,TBD,TBD
+370,/m/02jz0l ,"Water tap, faucet",Cuisine,Cuisine,Robinet d'eau,10,0.2,TDB,TBD,TBD
+371,/m/0130jx ,Sink (filling or washing),Cuisine,Cuisine,Évier,10,0.2,TDB,TBD,TBD
+372,/m/03dnzn ,Bathtub (filling or washing),Salle de bain,Salle de bain,Baignoire,10,0.2,TDB,TBD,TBD
+373,/m/03wvsk ,Hair dryer,Salle de bain,Salle de bain,Sèche-cheveux,10,0.2,TDB,TBD,TBD
+374,/m/01jt3m ,Toilet flush,Salle de bain,Salle de bain,Chasse d'eau,10,0.2,TDB,TBD,TBD
+375,/m/012xff ,Toothbrush,Salle de bain,Salle de bain,Brosse à dents,10,0.2,TDB,TBD,TBD
+376,/m/04fgwm ,Electric toothbrush,Salle de bain,Salle de bain,Brosse à dents électrique,10,0.2,TDB,TBD,TBD
+377,/m/0d31p ,Vacuum cleaner,Ménage,Ménage,aspirateur,10,0.2,TDB,TBD,TBD
+378,/m/01s0vc ,Zipper (clothing),Fermeture à glissière de vetement,Fermeture à glissière de vetement,Fermeture à glissière de vetement,10,0.2,TDB,TBD,TBD
+379,/m/03v3yw ,Keys jangling,Clefs,Clefs,clefs qui s'entrechoquent,10,0.2,TDB,TBD,TBD
+380,/m/0242l ,Coin (dropping),Monnaie,Monnaie,Pièce de monnaie,10,0.2,TDB,TBD,TBD
+381,/m/01lsmm ,Scissors,Ciseaux,Ciseaux,Les ciseaux,10,0.2,TDB,TBD,TBD
+382,/m/02g901 ,"Electric shaver, electric razor",Salle de bain,Salle de bain,Rasoir électrique,10,0.2,TDB,TBD,TBD
+383,/m/05rj2 ,Shuffling cards,Jeux,Jeux,Mélanger les cartes,10,0.97,TDB,TBD,TBD
+384,/m/0316dw ,Typing,Claviers,Claviers,Clavier d'ordinateur,10,0.2,TDB,TBD,TBD
+385,/m/0c2wf ,Typewriter,Claviers,Claviers,Machine à écrire,10,0.05,TDB,TBD,TBD
+386,/m/01m2v ,Computer keyboard,Claviers,Claviers,Clavier d'ordinateur,10,0.05,TDB,TBD,TBD
+387,/m/081rb ,Writing,Ecriture,Ecriture,L'écriture,10,0.05,TDB,TBD,TBD
+388,/m/07pp_mv ,Alarm,Alarmes,Alarmes,Alarme,10,0.2,TDB,TBD,TBD
+389,/m/07cx4 ,Telephone,Alarmes,Alarmes,Téléphone,10,0.2,TDB,TBD,TBD
+390,/m/07pp8cl ,Telephone bell ringing,Alarmes,Alarmes,Sonnerie de téléphone,10,0.2,TDB,TBD,TBD
+391,/m/01hnzm ,Ringtone,Alarmes,Alarmes,Sonnerie,10,0.2,TDB,TBD,TBD
+392,/m/02c8p ,"Telephone dialing, DTMF",Téléphone,Téléphone,Numérotation téléphonique,10,0.2,TDB,TBD,TBD
+393,/m/015jpf ,Dial tone,Téléphone,Téléphone,Tonalité,10,0.2,TDB,TBD,TBD
+394,/m/01z47d ,Busy signal,Téléphone,Téléphone,Signal occupé,10,0.2,TDB,TBD,TBD
+395,/m/046dlr ,Alarm clock,Alarmes,Alarmes,Réveil,10,0.2,TDB,TBD,TBD
+396,/m/03kmc9 ,Siren,Alarmes,Alarmes,Sirène,10,0.2,TDB,TBD,TBD
+397,/m/0dgbq ,Civil defense siren,Alarmes,Alarmes,Sirène de la défense civile,10,0.2,TDB,TBD,TBD
+398,/m/030rvx ,Buzzer,Alarmes,Alarmes,Avertisseur sonore,10,0.2,TDB,TBD,TBD
+399,/m/01y3hg ,"Smoke detector, smoke alarm",Alarmes,Alarmes,Détecteur de fumée,10,0.2,TDB,TBD,TBD
+400,/m/0c3f7m ,Fire alarm,Alarmes,Alarmes,Alarme incendie,10,0.2,TDB,TBD,TBD
+401,/m/04fq5q ,Foghorn,Alarmes,Alarmes,Corne de brume,10,0.2,TDB,TBD,TBD
+402,/m/0l156k ,Whistle,Alarmes,Alarmes,Sifflet,10,0.2,TDB,TBD,TBD
+403,/m/06hck5 ,Steam whistle,Alarmes,Alarmes,Sifflet à vapeur,10,0.2,TDB,TBD,TBD
+404,/t/dd00077 ,Mechanisms,Mecanismes,Mecanismes,Les mécanismes,10,0.2,TDB,TBD,TBD
+405,/m/02bm9n ,"Ratchet, pawl",Mecanismes,Mecanismes,Cliquet,10,0.2,TDB,TBD,TBD
+406,/m/01x3z ,Clock,Mecanismes,Mecanismes,L'horloge,10,0.2,TDB,TBD,TBD
+407,/m/07qjznt ,Tick,Mecanismes,Mecanismes,Cocher,10,0.2,TDB,TBD,TBD
+408,/m/07qjznl ,Tick-tock,Mecanismes,Mecanismes,Tic Tac,10,0.2,TDB,TBD,TBD
+409,/m/0l7xg ,Gears,Mecanismes,Mecanismes,Engrenages,10,0.2,TDB,TBD,TBD
+410,/m/05zc1 ,Pulleys,Mecanismes,Mecanismes,Poulies,10,0.2,TDB,TBD,TBD
+411,/m/0llzx ,Sewing machine,Mecanismes,Mecanismes,Machine à coudre,10,0.2,TDB,TBD,TBD
+412,/m/02x984l ,Mechanical fan,Mecanismes,Mecanismes,Ventilateur mécanique,10,0.2,TDB,TBD,TBD
+413,/m/025wky1 ,Air conditioning,Mecanismes,Mecanismes,Climatisation,10,0.2,TDB,TBD,TBD
+414,/m/024dl ,Cash register,Mecanismes,Mecanismes,Caisse enregistreuse,10,0.2,TDB,TBD,TBD
+415,/m/01m4t ,Printer,Mecanismes,Mecanismes,Imprimante,10,0.2,TDB,TBD,TBD
+416,/m/0dv5r ,Camera,Mecanismes,Mecanismes,Caméra,10,0.2,TDB,TBD,TBD
+417,/m/07bjf ,Single-lens reflex camera,Mecanismes,Mecanismes,Appareil photo,10,0.2,TDB,TBD,TBD
+418,/m/07k1x ,Tools,Outils,Outils,Outils,10,0.2,TDB,TBD,TBD
+419,/m/03l9g ,Hammer,Outils,Outils,Marteau,10,0.2,TDB,TBD,TBD
+420,/m/03p19w ,Jackhammer,Outils,Outils,Jackhammer,10,0.2,TDB,TBD,TBD
+421,/m/01b82r ,Sawing,Outils,Outils,Sciage,10,0.2,TDB,TBD,TBD
+422,/m/02p01q ,Filing (rasp),Outils,Outils,Classement de papiers,10,0.2,TDB,TBD,TBD
+423,/m/023vsd ,Sanding,Outils,Outils,Ponçage,10,0.2,TDB,TBD,TBD
+424,/m/0_ksk ,Power tool,Outils,Outils,Outil électrique,10,0.2,TDB,TBD,TBD
+425,/m/01d380 ,Drill,Outils,Outils,Percer,10,0.2,TDB,TBD,TBD
+426,/m/014zdl ,Explosion,Armes,Armes,Explosion,10,0.9,TDB,TBD,TBD
+427,/m/032s66 ,"Gunshot, gunfire",Armes,Armes,Coup de feu,10,0.95,TDB,TBD,TBD
+428,/m/04zjc ,Machine gun,Armes,Armes,Mitraillette,10,0.95,TDB,TBD,TBD
+429,/m/02z32qm ,Fusillade,Armes,Armes,Fusillade,10,0.95,TDB,TBD,TBD
+430,/m/0_1c ,Artillery fire,Armes,Armes,Feu d'artillerie,10,0.95,TDB,TBD,TBD
+431,/m/073cg4 ,Cap gun,Bruits humains,Bruits humains,Clap de mains,10,0.05,TDB,TBD,TBD
+432,/m/0g6b5 ,Fireworks,Explosions,Explosions,Feux d'artifice,10,0.2,TDB,TBD,TBD
+433,/g/122z_qxw ,Firecracker,Explosions,Explosions,Pétard,10,0.95,TDB,TBD,TBD
+434,/m/07qsvvw ,"Burst, pop",Explosions,Explosions,"Éclater, pop",10,0.95,TDB,TBD,TBD
+435,/m/07pxg6y ,Eruption,Explosions,Explosions,Éruption,10,0.95,TDB,TBD,TBD
+436,/m/07qqyl4 ,Boom,Explosions,Explosions,Boom,10,0.95,TDB,TBD,TBD
+437,/m/083vt ,Wood,Bois,Bois,Bois,10,0.98,TDB,TBD,TBD
+438,/m/07pczhz ,Chop,Bois,Bois,Frappe,10,0.2,TDB,TBD,TBD
+439,/m/07pl1bw ,Splinter,Bois,Bois,Éclat,10,0.5,TDB,TBD,TBD
+440,/m/07qs1cx ,Crack,Bois,Bois,Fissure,10,0.5,TDB,TBD,TBD
+441,/m/039jq ,Glass,Verre,Verre,Verre,10,0.5,TDB,TBD,TBD
+442,/m/07q7njn ,"Chink, clink",Verre,Verre,"Chink, clink",10,0.2,TDB,TBD,TBD
+443,/m/07rn7sz ,Shatter,Verre,Verre,Briser,10,0.2,TDB,TBD,TBD
+444,/m/04k94 ,Liquid,Liquide,Liquide,Liquide,10,0.05,TDB,TBD,TBD
+445,/m/07rrlb6 ,"Splash, splatter",Liquide,Liquide,Éclaboussures,10,0.2,TDB,TBD,TBD
+446,/m/07p6mqd ,Slosh,Liquide,Liquide,Patauger,10,0.2,TDB,TBD,TBD
+447,/m/07qlwh6 ,Squish,Liquide,Liquide,Gargouillis,10,0.97,TDB,TBD,TBD
+448,/m/07r5v4s ,Drip,Liquide,Liquide,Goutte,10,0.2,TDB,TBD,TBD
+449,/m/07prgkl ,Pour,Liquide,Liquide,Verser,10,0.2,TDB,TBD,TBD
+450,/m/07pqc89 ,"Trickle, dribble",Liquide,Liquide,Trickle,10,0.2,TDB,TBD,TBD
+451,/t/dd00088 ,Gush,Liquide,Liquide,Jet,10,0.2,TDB,TBD,TBD
+452,/m/07p7b8y ,Fill (with liquid),Liquide,Liquide,Remplir avec du liquide,10,0.2,TDB,TBD,TBD
+453,/m/07qlf79 ,Spray,Liquide,Liquide,Vaporisateur,10,0.2,TDB,TBD,TBD
+454,/m/07ptzwd ,Pump (liquid),Liquide,Liquide,Pompe (liquide),10,0.2,TDB,TBD,TBD
+455,/m/07ptfmf ,Stir,Liquide,Liquide,Remuer,10,0.2,TDB,TBD,TBD
+456,/m/0dv3j ,Boiling,Liquide,Liquide,Ébullition,10,0.2,TDB,TBD,TBD
+457,/m/0790c ,Sonar,Liquide,Liquide,Sonar,10,0.2,TDB,TBD,TBD
+458,/m/0dl83 ,Arrow,Flèche,Flèche,Flèche,10,0.2,TDB,TBD,TBD
+459,/m/07rqsjt ,"Whoosh, swoosh, swish",Whoosh,Whoosh,Whoosh,10,0.2,TDB,TBD,TBD
+460,/m/07qnq_y ,"Thump, thud",Coup sourd,Coup sourd,Coup sourd,10,0.2,TDB,TBD,TBD
+461,/m/07rrh0c ,Thunk,Thunk,Thunk,Thunk,10,0.2,TDB,TBD,TBD
+462,/m/0b_fwt ,Electronic tuner,Tuner électronique,Tuner électronique,Tuner électronique,10,0.2,TDB,TBD,TBD
+463,/m/02rr_ ,Effects unit,Unité d'effets,Unité d'effets,Unité d'effets,10,0.2,TDB,TBD,TBD
+464,/m/07m2kt ,Chorus effect,Effet de chorus,Effet de chorus,Effet de chorus,10,0.2,TDB,TBD,TBD
+465,/m/018w8 ,Basketball bounce,Rebond de basket-ball,Rebond de basket-ball,Rebond de basket-ball,10,0.2,TDB,TBD,TBD
+466,/m/07pws3f ,Bang,Coup,Coup,Coup,10,0.2,TDB,TBD,TBD
+467,/m/07ryjzk ,"Slap, smack","Slap, smack","Slap, smack","Slap, smack",10,0.2,TDB,TBD,TBD
+468,/m/07rdhzs ,"Whack, thwack","Whack, thwack","Whack, thwack","Whack, thwack",10,0.2,TDB,TBD,TBD
+469,/m/07pjjrj ,"Smash, crash","Smash, crash","Smash, crash","Smash, crash",10,0.2,TDB,TBD,TBD
+470,/m/07pc8lb ,Breaking,Rupture,Rupture,Rupture,10,0.2,TDB,TBD,TBD
+471,/m/07pqn27 ,Bouncing,Rebondir,Rebondir,Rebondir,10,0.2,TDB,TBD,TBD
+472,/m/07rbp7_ ,Whip,Fouet,Fouet,Fouet,10,0.2,TDB,TBD,TBD
+473,/m/07pyf11 ,Flap,Rabat,Rabat,Rabat,10,0.2,TDB,TBD,TBD
+474,/m/07qb_dv ,Scratch,Rayure,Rayure,Rayure,10,0.2,TDB,TBD,TBD
+475,/m/07qv4k0 ,Scrape,Gratter,Gratter,Gratter,10,0.2,TDB,TBD,TBD
+476,/m/07pdjhy ,Rub,Frotter,Frotter,Frotter,10,0.2,TDB,TBD,TBD
+477,/m/07s8j8t ,Roll,Rouleau,Rouleau,Rouleau,10,0.2,TDB,TBD,TBD
+478,/m/07plct2 ,Crushing,Écrasement,Écrasement,Écrasement,10,0.2,TDB,TBD,TBD
+479,/t/dd00112 ,"Crumpling, crinkling","Froissement, plissement","Froissement, plissement","Froissement, plissement",10,0.2,TDB,TBD,TBD
+480,/m/07qcx4z ,Tearing,Déchirure,Déchirure,Déchirure,10,0.2,TDB,TBD,TBD
+481,/m/02fs_r ,"Beep, bleep",Bip,Bip,Bip,10,0.2,TDB,TBD,TBD
+482,/m/07qwdck ,Ping,Ping,Ping,Ping,10,0.98,TDB,TBD,TBD
+483,/m/07phxs1 ,Ding,Ding,Ding,Ding,10,0.98,TDB,TBD,TBD
+484,/m/07rv4dm ,Clang,Bruit,Bruit,Bruit,10,0.98,TDB,TBD,TBD
+485,/m/07s02z0 ,Squeal,Hurler,Hurler,Hurler,10,0.2,TDB,TBD,TBD
+486,/m/07qh7jl ,Creak,Craquer,Craquer,Craquer,10,0.2,TDB,TBD,TBD
+487,/m/07qwyj0 ,Rustle,Bruissement,Bruissement,Bruissement,10,0.98,TDB,TBD,TBD
+488,/m/07s34ls ,Whir,Vrombissement,Vrombissement,Vrombissement,10,0.98,TDB,TBD,TBD
+489,/m/07qmpdm ,Clatter,Bruit,Bruit,Bruit,10,0.98,TDB,TBD,TBD
+490,/m/07p9k1k ,Sizzle,Grésiller,Grésiller,Grésiller,10,0.98,TDB,TBD,TBD
+491,/m/07qc9xj ,Clicking,En cliquant,En cliquant,En cliquant,10,0.2,TDB,TBD,TBD
+492,/m/07rwm0c ,Clickety-clack,Clic-clac,Clic-clac,Clic-clac,10,0.98,TDB,TBD,TBD
+493,/m/07phhsh ,Rumble,Gronder,Gronder,Gronder,10,0.98,TDB,TBD,TBD
+494,/m/07qyrcz ,Plop,Ploc,Ploc,Ploc,10,0.98,TDB,TBD,TBD
+495,/m/07qfgpx ,"Jingle, tinkle","Jingle, tintement","Jingle, tintement","Jingle, tintement",10,0.98,TDB,TBD,TBD
+496,/m/07rcgpl ,Hum,Fredonner,Fredonner,Fredonner,10,0.98,TDB,TBD,TBD
+497,/m/07p78v5 ,Zing,Zing,Zing,Zing,10,0.98,TDB,TBD,TBD
+498,/t/dd00121 ,Boing,Boing,Boing,Boing,10,0.98,TDB,TBD,TBD
+499,/m/07s12q4 ,Crunch,Croquer,Croquer,Croquer,10,0.98,TDB,TBD,TBD
+500,/m/028v0c ,Silence,Silence,Silence,Silence,10,0.5,TDB,TBD,TBD
+501,/m/01v_m0 ,Sine wave,Onde sinusoïdale,Onde sinusoïdale,Onde sinusoïdale,10,0.97,TDB,TBD,TBD
+502,/m/0b9m1 ,Harmonic,Harmonique,Harmonique,Harmonique,10,0.97,TDB,TBD,TBD
+503,/m/0hdsk ,Chirp tone,gazouillis,gazouillis,gazouillis,10,0.97,TDB,TBD,TBD
+504,/m/0c1dj ,Sound effect,Effet sonore,Effet sonore,Effet sonore,10,0.98,TDB,TBD,TBD
+505,/m/07pt_g0 ,Pulse,Impulsion,Impulsion,Impulsion,10,0.98,TDB,TBD,TBD
+506,/t/dd00125 ,"Inside, small room","À l'intérieur, petite pièce","À l'intérieur, petite pièce","À l'intérieur, petite pièce",10,0.5,TDB,TBD,TBD
+507,/t/dd00126 ,"Inside, large room or hall","À l'intérieur, grande salle ou hall","À l'intérieur, grande salle ou hall","À l'intérieur, grande salle ou hall",10,0.5,TDB,TBD,TBD
+508,/t/dd00127 ,"Inside, public space","À l'intérieur, espace public","À l'intérieur, espace public","À l'intérieur, espace public",10,0.5,TDB,TBD,TBD
+509,/t/dd00128 ,"Outside, urban or manmade","À l'extérieur, urbain ou artificiel","À l'extérieur, urbain ou artificiel","À l'extérieur, urbain ou artificiel",10,0.5,TDB,TBD,TBD
+510,/t/dd00129 ,"Outside, rural or natural","Extérieur, rural ou naturel","Extérieur, rural ou naturel","Extérieur, rural ou naturel",10,0.5,TDB,TBD,TBD
+511,/m/01b9nn ,Reverberation,Réverbération,Réverbération,Réverbération,10,0.5,TDB,TBD,TBD
+512,/m/01jnbd ,Echo,Écho,Écho,Écho,10,0.5,TDB,TBD,TBD
+513,/m/096m7z ,Noise,Bruit,Bruit,Bruit,10,0.2,TDB,TBD,TBD
+514,/m/06_y0by ,Environmental noise,Bruit de l'environnement,Bruit de l'environnement,Bruit de l'environnement,10,0.2,TDB,TBD,TBD
+515,/m/07rgkc5 ,Static,Statique,Statique,Statique,10,0.2,TDB,TBD,TBD
+516,/m/06xkwv ,Mains hum,Bourdonnement,Bourdonnement,Bourdonnement,10,0.2,TDB,TBD,TBD
+517,/m/0g12c5 ,Distortion,Distorsion,Distorsion,Distorsion,10,0.2,TDB,TBD,TBD
+518,/m/08p9q4 ,Sidetone,Ton côté,Ton côté,Ton côté,10,0.98,TDB,TBD,TBD
+519,/m/07szfh9 ,Cacophony,Cacophonie,Cacophonie,Cacophonie,10,0.98,TDB,TBD,TBD
+520,/m/0chx_ ,White noise,bruit blanc,bruit blanc,bruit blanc,10,0.2,TDB,TBD,TBD
+521,/m/0cj0r ,Pink noise,Bruit rose,Bruit rose,Bruit rose,10,0.95,TDB,TBD,TBD
+522,/m/07p_0gm ,Throbbing,Battement,Battement,Battement,10,0.2,TDB,TBD,TBD
+523,/m/01jwx6 ,Vibration,Vibration,Vibration,Vibration,10,0.2,TDB,TBD,TBD
+524,/m/07c52 ,Television,Télévision,Télévision,Télévision,10,0.2,TDB,TBD,TBD
+525,/m/06bz3 ,Radio,Radio,Radio,Radio,10,0.2,TDB,TBD,TBD
+526,/m/07hvw1 ,Field recording,Enregistrement sur le terrain,Enregistrement sur le terrain,Enregistrement sur le terrain,10,0.98,TDB,TBD,TBD
