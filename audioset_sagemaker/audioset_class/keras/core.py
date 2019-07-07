@@ -14,11 +14,16 @@ from keras.models import Model
 from keras.layers import Input, Dense, Dropout, Lambda, Activation
 import keras.backend as K
 from keras.optimizers import Adam
+import pandas as pd
 
 try:
     import cPickle
 except BaseException:
     import _pickle as cPickle
+
+def get_embeddings(mask_array, index2emb):
+    output = np.matmul(1.0*mask_array, index2emb)
+    return np.divide(output, np.sum(1.0*mask_array,axis=1).reshape(-1,1))
 
 
 def evaluate(model, input, target, stats_dir, probs_dir, iteration):
@@ -67,6 +72,44 @@ def evaluate(model, input, target, stats_dir, probs_dir, iteration):
         logging.info("Saveing prob to {}".format(prob_path))
         logging.info("Saveing stat to {}".format(stat_path))
 
+def evaluate_embeddings(model, input, target, stats_dir, probs_dir, iteration):
+    """Evaluate a model.
+
+    Args:
+      model: object
+      output: 2d array, (samples_num, classes_num)
+      target: 2d array, (samples_num, classes_num)
+      stats_dir: str, directory to write out statistics.
+      probs_dir: str, directory to write out output (samples_num, classes_num)
+      iteration: int
+
+    Returns:
+      None
+    """
+
+    utilities.create_folder(stats_dir)
+    utilities.create_folder(probs_dir)
+
+    # Predict presence probabilittarget
+    callback_time = time.time()
+    (clips_num, time_steps, freq_bins) = input.shape
+    (input, target) = utilities.transform_data(input, target)
+
+    # Calculate statistics
+    score_mse_test = model.evaluate(input, target)
+
+    # Write out statistics
+    stat_path = os.path.join(stats_dir, "stat_{}_iters.p".format(iteration))
+    cPickle.dump(score_mse_test, open(stat_path, 'wb'))
+
+  
+    logging.info(
+        "MSE: {:.6f}, Callback time: {:.3f} s".format(
+           score_mse_test, time.time() - callback_time))
+
+    if False:
+        logging.info("Saveing stat to {}".format(stat_path))
+
 
 def train(args):
     """Train a model.
@@ -81,12 +124,19 @@ def train(args):
     model_type = args.model_type
     model = args.model
     batch_size = args.batch_size
-
+    if model_type == 'decision_level_multi_attention_embedding':
+        embeddings_df = pd.read_pickle(args.embeddings)
+        class_labels_df = pd.read_csv('class_labels_indices.csv')
+        df = pd.merge(embeddings_df, class_labels_df, how='inner', left_on='id', right_on='mid')[['index','vecs']] 
+        first_vec = np.array(df.loc[df['index']==0]['vecs'].values[0]).reshape(-1)
+        class_vec = np.zeros((len(df),first_vec.shape[0]))
+        for i in range(len(df)):
+            vec = np.array(df.loc[df['index']==i]['vecs'].values[0]).reshape(-1)
+            class_vec[i] = vec
     # Path of hdf5 data
     bal_train_hdf5_path = os.path.join(data_dir, "bal_train.h5")
     unbal_train_hdf5_path = os.path.join(data_dir, "unbal_train.h5")
     test_hdf5_path = os.path.join(data_dir, "eval.h5")
-
     # Load data
     load_time = time.time()
 
@@ -98,7 +148,8 @@ def train(args):
         train_x = bal_train_x
         train_y = bal_train_y
         train_id_list = bal_train_id_list
-
+        if model_type == 'decision_level_multi_attention_embedding':
+            train_y_target = get_embeddings(train_y, class_vec)
     else:
         # Load both balanced and unbalanced data
         (bal_train_x, bal_train_y, bal_train_id_list) = utilities.load_data(
@@ -106,20 +157,26 @@ def train(args):
 
         (unbal_train_x, unbal_train_y, unbal_train_id_list) = utilities.load_data(
             unbal_train_hdf5_path)
-
         train_x = np.concatenate((bal_train_x, unbal_train_x))
         train_y = np.concatenate((bal_train_y, unbal_train_y))
+        if model_type == 'decision_level_multi_attention_embedding':
+            train_y_target = get_embeddings(train_y, class_vec)
+            bal_train_y_target = get_embeddings(bal_train_y, class_vec)
         train_id_list = bal_train_id_list + unbal_train_id_list
 
     # Test data
     (test_x, test_y, test_id_list) = utilities.load_data(test_hdf5_path)
-
+    if model_type == 'decision_level_multi_attention_embedding':
+        test_y = get_embeddings(test_y, class_vec)
     logging.info("Loading data time: {:.3f} s".format(time.time() - load_time))
     logging.info("Training data shape: {}".format(train_x.shape))
 
     # Optimization method
     optimizer = Adam(lr=learning_rate)
-    model.compile(loss='binary_crossentropy', optimizer=optimizer)
+    if model_type == 'decision_level_multi_attention_embedding':
+        model.compile(loss='mse', optimizer=optimizer)
+    else:
+        model.compile(loss='binary_crossentropy', optimizer=optimizer)
 
     # Output directories
     sub_dir = os.path.join(filename,
@@ -137,20 +194,35 @@ def train(args):
 
     # Data generator
     if balance_type == 'no_balance':
-        DataGenerator = data_generator.VanillaDataGenerator
+        if model_type == 'decision_level_multi_attention_embedding':
+            DataGenerator = data_generator.VanillaDataEmbeddingGenerator
+        else:    
+            DataGenerator = data_generator.VanillaDataGenerator
 
     elif balance_type == 'balance_in_batch':
-        DataGenerator = data_generator.BalancedDataGenerator
-
+        if model_type == 'decision_level_multi_attention_embedding':
+            DataGenerator = data_generator.BalancedDataEmbeddingGenerator
+        else:
+            DataGenerator = data_generator.BalancedDataGenerator
     else:
         raise Exception("Incorrect balance_type!")
 
-    train_gen = DataGenerator(
-        x=train_x,
-        y=train_y,
-        batch_size=batch_size,
-        shuffle=True,
-        seed=1234)
+    if model_type == 'decision_level_multi_attention_embedding':
+        train_gen = DataGenerator(
+            x=train_x,
+            y=train_y,
+            y_target = train_y_target,
+            batch_size=batch_size,
+            shuffle=True,
+            seed=1234)
+    else:
+        train_gen = DataGenerator(
+            x=train_x,
+            y=train_y,
+            y_target = train_y_target,
+            batch_size=batch_size,
+            shuffle=True,
+            seed=1234)
 
     iteration = 0
     call_freq = 1000
@@ -166,25 +238,41 @@ def train(args):
             logging.info(
                 "Iteration: {}, train time: {:.3f} s".format(
                     iteration, time.time() - train_time))
-
-            logging.info("Balance train statistics:")
-            evaluate(
-                model=model,
-                input=bal_train_x,
-                target=bal_train_y,
-                stats_dir=os.path.join(stats_dir, 'bal_train'),
-                probs_dir=os.path.join(probs_dir, 'bal_train'),
-                iteration=iteration)
-
-            logging.info("Test statistics:")
-            evaluate(
-                model=model,
-                input=test_x,
-                target=test_y,
-                stats_dir=os.path.join(stats_dir, "test"),
-                probs_dir=os.path.join(probs_dir, "test"),
-                iteration=iteration)
-
+            if model_type == 'decision_level_multi_attention_embedding':
+                logging.info("Balance train statistics:")
+                evaluate_embeddings(
+                    model=model,
+                    input=bal_train_x,
+                    target=bal_train_y_target,
+                    stats_dir=os.path.join(stats_dir, 'bal_train'),
+                    probs_dir=os.path.join(probs_dir, 'bal_train'),
+                    iteration=iteration)
+                logging.info("Test statistics:")
+                evaluate_embeddings(
+                   model=model,
+                   input=test_x,
+                   target=test_y,
+                   stats_dir=os.path.join(stats_dir, "test"),
+                   probs_dir=os.path.join(probs_dir, "test"),
+                   iteration=iteration)
+            else:
+                logging.info("Balance train statistics:")
+                evaluate(
+                    model=model,
+                    input=bal_train_x,
+                    target=bal_train_y,
+                    stats_dir=os.path.join(stats_dir, 'bal_train'),
+                    probs_dir=os.path.join(probs_dir, 'bal_train'),
+                    iteration=iteration)
+                logging.info("Test statistics:")
+                evaluate(
+                   model=model,
+                   input=test_x,
+                   target=test_y,
+                   stats_dir=os.path.join(stats_dir, "test"),
+                   probs_dir=os.path.join(probs_dir, "test"),
+                   iteration=iteration)
+            
             train_time = time.time()
 
         # Update params

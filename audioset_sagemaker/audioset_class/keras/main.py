@@ -68,6 +68,7 @@ def train(args):
     hidden_units = 1024
     drop_rate = 0.5
     batch_size = 500
+    embedding_size = 300
 
     # Embedded layers
     input_layer = Input(shape=(time_steps, freq_bins))
@@ -170,6 +171,26 @@ def train(args):
         output = Concatenate()(p_static_array) 
         output_layer = Flatten()(output)
         p_dynamic_layer = Concatenate()(p_dynamic)
+
+    elif model_type == 'decision_level_multi_attention_embedding':
+        '''Decision level multi attention pooling.
+
+        [4] Yu, Changsong, et al. "Multi-level Attention Model for Weakly
+        Supervised Audio Classification." arXiv preprint arXiv:1803.02353
+        (2018).
+        '''
+        cla1 = Dense(classes_num, activation='sigmoid')(a2)
+        att1 = Dense(classes_num, activation='softmax')(a2)
+        out1 = Lambda(
+            attention_pooling, output_shape=pooling_shape)([cla1, att1])
+
+        cla2 = Dense(classes_num, activation='sigmoid')(a3)
+        att2 = Dense(classes_num, activation='softmax')(a3)
+        out2 = Lambda(
+            attention_pooling, output_shape=pooling_shape)([cla2, att2])
+
+        b1 = Concatenate(axis=-1)([out1, out2])
+        output_layer = Dense(embedding_size)(b1)
     else:
         raise Exception("Incorrect model_type!")
 
@@ -191,6 +212,12 @@ def train(args):
             json_file.write(model_json)
         # serialize weights to HDF5
         model.save_weights("./models/sound_class_adap.h5")
+    if model_type == 'decision_level_multi_attention_embedding':
+        model_json = model.to_json()
+        with open("./models/sound_class_embedding.json", "w") as json_file:
+            json_file.write(model_json)
+        # serialize weights to HDF5
+        model.save_weights("./models/sound_class_embedding.h5")
 
 # Main
 if __name__ == '__main__':
@@ -200,6 +227,8 @@ if __name__ == '__main__':
     parser.add_argument('--data_dir', type=str, required=True)
 
     parser.add_argument('--workspace', type=str, required=True)
+
+    parser.add_argument('--embeddings', type=str, required=False)
 
     parser.add_argument('--mini_data', action='store_true',
                         default=False)
@@ -213,7 +242,9 @@ if __name__ == '__main__':
                                  'decision_level_average_pooling', 
                                  'decision_level_single_attention',
                                  'decision_level_multi_attention',
-                                 'feature_level_attention','adaptative_pooling'])
+                                 'feature_level_attention',
+                                 'adaptative_pooling',
+                                 'decision_level_multi_attention_embedding'])
 
     parser.add_argument('--learning_rate', type=float, default=1e-3)
 
